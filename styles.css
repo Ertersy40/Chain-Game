@@ -33,7 +33,7 @@ h1{
 }
 
 #chainDisplay {
-    max-height: 650px;
+    max-height: min(650px, 65%);
     overflow-y: auto;
     font-size: 18px;
     display: flex;
@@ -104,6 +104,7 @@ button, input {
 }
 
 #confetti-canvas{
+    z-index: 100;
     position: absolute;
     top: 0;
     right: 0;
