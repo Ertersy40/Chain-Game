@@ -59,6 +59,7 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .letter.correct {
@@ -161,3 +162,26 @@ button {
     top: 0;
     left: 0;
 }
+
+@keyframes shake {
+    0% { margin-left: 0; }
+    25% { margin-left: -5px; }
+    35% { background-color: rgb(226, 66, 66); color: white }
+    50% { margin-left: 5px; }
+    65% { background-color: rgb(226, 66, 66); color: white }
+    75% { margin-left: -5px; }
+    100% { margin-left: 0; }
+}
+
+/* @keyframes fadeRed {
+    35% { background-color: red; }
+    65% { background-color: red; }
+} */
+
+.letter.shake {
+    animation: shake 0.5s;
+}
+
+/* .letter.fade-red {
+    animation: fadeRed 0.5s;
+} */

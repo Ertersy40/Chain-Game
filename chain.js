@@ -5,9 +5,15 @@ function loadWordData(filePath, callback) {
         .catch(error => console.error('Error loading word data:', error));
 }
 
-function getRandomWord(words) {
+function seededRandom(seed) {
+    var x = Math.sin(seed) * 10000;
+    return x - Math.floor(x);
+}
+
+function getRandomWord(words, seed) {
     const keys = Object.keys(words);
-    return keys[Math.floor(Math.random() * keys.length)];
+    const randomIndex = Math.floor(seededRandom(seed) * keys.length);
+    return keys[randomIndex];
 }
 
 function hasNoSimilarLetters(word1, word2) {
@@ -26,7 +32,6 @@ function findPath(words, startingWord, maxLength = 20) {
 
     while (path.length <= maxLength) {
         let foundNext = false;
-
         for (let nextWord of words[currentWord]) {
             if (!visited.has(nextWord)) {
                 if (hasNoSimilarLetters(startingWord, nextWord)) {
@@ -54,6 +59,35 @@ function findPath(words, startingWord, maxLength = 20) {
 
     saveGuesses(path);
     return path; // Return the path found
+}
+
+function findAndDisplayPath(wordData) {
+    // Generate a seed based on today's date
+    const today = new Date();
+    const baseSeed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+
+    let startingWord, path, minMoves, seedIncrement = 0;
+
+    do {
+        const seed = baseSeed + seedIncrement; // Increment seed slightly each iteration
+        startingWord = getRandomWord(wordData, seed);
+        path = findPath(wordData, startingWord);
+
+        if (path) {
+            const targetWord = path[path.length - 1];
+            minMoves = calculateMinMoves(wordData, startingWord, targetWord);
+        }
+
+        seedIncrement++; // Increment to try a different seed in case of failure
+    } while (!path || minMoves <= 5); // Ensure that only words with more than 5 minimum moves apart are chosen
+
+    const targetWord = path[path.length - 1];
+
+    localStorage.setItem('startingWord', startingWord);
+    localStorage.setItem('targetWord', targetWord);
+    localStorage.setItem('guesses', JSON.stringify([startingWord])); // Start with the starting word
+    
+    displayChain([startingWord], targetWord); // Display the initial chain
 }
 
 function calculateMinMoves(words, startingWord, targetWord) {
@@ -167,10 +201,13 @@ function selectLetter(letterDiv, wordDivContainer) {
 
 function handleLetterChange(event) {
     const selectedLetter = document.querySelector('.letter.selected');
-    if (!selectedLetter) return;
+    if (!selectedLetter) {
+        console.log('no selected letter?')
+        return
+    };
 
     const newLetter = event.target.value.toLowerCase();
-    event.target.value = '';  // Clear the input field for next entry
+    event.target.value = '';  // Clear the input field for the next entry
 
     if (newLetter.length === 1 && /[a-z]/.test(newLetter)) {
         const wordDivContainer = selectedLetter.closest('.word');
@@ -187,37 +224,23 @@ function handleLetterChange(event) {
             const currentWord = guesses[guesses.length - 1];
             if (wordData[newWord] && isOneLetterDifferent(currentWord, newWord)) {
                 submitGuess(wordData, newWord); // Submit the guess if valid
+            } else {
+                // If the word is invalid, trigger the shake and fade animation
+                selectedLetter.classList.add('shake', 'fade-red');
+                
+                setTimeout(() => {
+                    selectedLetter.classList.remove('shake', 'fade-red');
+                }, 500);
             }
         });
     }
 
-    // Remove the 'selected' class after typing the new letter
-    selectedLetter.classList.remove('selected');
-    document.getElementById('hiddenInput').removeEventListener('input', handleLetterChange);
+    // Keep the letter selected after the animation
+    selectedLetter.classList.add('selected');
+    // document.getElementById('hiddenInput').removeEventListener('input', handleLetterChange);
 }
 
-function findAndDisplayPath(wordData) {
-    let startingWord, path, minMoves;
 
-    do {
-        startingWord = getRandomWord(wordData);
-        path = findPath(wordData, startingWord);
-
-        if (path) {
-            const targetWord = path[path.length - 1];
-            minMoves = calculateMinMoves(wordData, startingWord, targetWord);
-        }
-    } while (!path || minMoves <= 4); // Ensure that only words with more than 5 minimum moves apart are chosen
-
-    const targetWord = path[path.length - 1];
-
-    localStorage.setItem('startingWord', startingWord);
-    localStorage.setItem('targetWord', targetWord);
-    localStorage.setItem('guesses', JSON.stringify([startingWord])); // Start with the starting word
-    
-    displayChain([startingWord], targetWord); // Display the initial chain
-    displayMinMoves(minMoves); // Display the minimum possible moves
-}
 
 function displayMinMoves(minMoves) {
     const minMovesDiv = document.getElementById('minMovesDisplay');
@@ -226,9 +249,9 @@ function displayMinMoves(minMoves) {
 
 function submitGuess(wordData, userGuess = null) {
 
-    console.log('clogclef')
-    calculateMinMoves(wordData, "clog", "clef")
-    console.log('clogclef')
+    // console.log('clogclef')
+    // calculateMinMoves(wordData, "clog", "clef")
+    // console.log('clogclef')
 
     userGuess = userGuess || document.getElementById('userGuess').value.trim().toLowerCase();
     const guesses = loadGuesses();
@@ -276,11 +299,11 @@ function showWinModal(playerScore, minMoves) {
     const shareButton = document.getElementById('shareButton');
     const closeModalButton = document.getElementById('closeModalButton');
 
-    scoreMessage.textContent = `You completed the game in ${playerScore} moves! The minimum possible moves were ${minMoves}.`;
+    scoreMessage.textContent = `Final score:\n${playerScore} out of ${minMoves}.`;
 
     // Share button functionality
     shareButton.onclick = function() {
-        const shareText = `I completed the word game in ${playerScore} moves, with the minimum possible being ${minMoves}! Can you beat my score?`;
+        const shareText = `I completed WordChains in ${playerScore}/${minMoves}!\nWordChains.xyz`;
         if (navigator.share) {
             navigator.share({
                 title: 'Word Game',
