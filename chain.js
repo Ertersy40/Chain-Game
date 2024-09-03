@@ -173,6 +173,10 @@ function displayChain(guesses, targetWord) {
         top: chainDiv.scrollHeight,
         behavior: 'smooth' // This makes the scroll smooth
     });
+    document.body.scrollTo({
+        top: document.body.scrollHeight -216,
+        behavior: 'smooth' // This makes the scroll smooth
+    });
 }
 
 function displayWord(word, targetWord, isCurrentWord = false) {
