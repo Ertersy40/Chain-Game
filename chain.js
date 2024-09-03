@@ -193,7 +193,8 @@ function submitGuess(wordData, userGuess = null) {
         displayChain(guesses, targetWord); // Update the chain display
 
         if (userGuess === targetWord) {
-            burstConfetti()
+            endGame();
+            
         }
     } else {
         console.log(currentWord);
@@ -201,6 +202,19 @@ function submitGuess(wordData, userGuess = null) {
 
     document.getElementById('userGuess').value = ''; // Clear the input field
 }
+
+function endGame() {
+    burstConfetti(); 
+
+    // Deselect all letters
+    document.querySelectorAll('.letter.selected').forEach(letter => letter.classList.remove('selected'));
+
+    // Remove click event listeners to disable further selection
+    document.querySelectorAll('.letter').forEach(letter => {
+        letter.replaceWith(letter.cloneNode(true)); // Cloning removes all event listeners
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     loadWordData('word_differences.json', findAndDisplayPath);
 });
