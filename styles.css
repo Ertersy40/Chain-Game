@@ -176,7 +176,7 @@ button {
     100% { margin-left: 0; }
 }
 
- @keyframes slideDown {
+@keyframes slideDown {
     0% { transform: translateY(-70px); }
     100% { transform: translateY(0px); }
 }
@@ -184,51 +184,43 @@ button {
 @keyframes correctLetter1 {
     0% { 
         transform: translateY(-70px);
-        
     }
-    25% { transform: translateY(0px);}
-    26% { scale: 1; }
-    35% {
-        scale: 1.1;
-    }
-    45% {scale: 1}
+    28% { transform: translateY(0px); }
+    29% { scale: 1; }
+    35% { scale: 1.1; }
+    45% { scale: 1; }
 } 
+
 @keyframes correctLetter2 {
     0% { 
         transform: translateY(-70px);
-        
     }
-    25% { transform: translateY(0px);}
+    28% { transform: translateY(0px); }
     45% { scale: 1; }
-    55% {
-        scale: 1.1;
-    }
-    65% {scale: 1}
+    55% { scale: 1.1; }
+    65% { scale: 1; }
 } 
+
 @keyframes correctLetter3 {
     0% { 
         transform: translateY(-70px);
-        
     }
-    25% { transform: translateY(0px);}
+    28% { transform: translateY(0px); }
     65% { scale: 1; }
-    75% {
-        scale: 1.1;
-    }
-    85% {scale: 1}
+    75% { scale: 1.1; }
+    85% { scale: 1; }
 } 
+
 @keyframes correctLetter4 {
     0% { 
         transform: translateY(-70px);
-        
     }
-    25% { transform: translateY(0px);}
+    28% { transform: translateY(0px); }
     85% { scale: 1; }
-    95% {
-        scale: 1.1;
-    }
-    100% {scale: 1}
+    95% { scale: 1.1; }
+    100% { scale: 1; }
 } 
+
 
 .letter.shake {
     animation: shake 0.5s;

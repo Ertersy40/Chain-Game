@@ -169,13 +169,10 @@ function displayChain(guesses, targetWord) {
         chainDiv.appendChild(targetDivContainer);
     }
 
-    const maxHeight = parseInt(getComputedStyle(chainDiv).maxHeight, 10);
-    if (chainDiv.scrollHeight > maxHeight) {
-        chainDiv.scrollTop = chainDiv.scrollHeight
-        chainDiv.style.paddingInline = '16px'; // Add padding to account for scrollbar width
-    } else {
-        chainDiv.style.paddingInline = '0px'; // Reset padding if no scrollbar is needed
-    }
+    chainDiv.scrollTo({
+        top: chainDiv.scrollHeight,
+        behavior: 'smooth' // This makes the scroll smooth
+    });
 }
 
 function displayWord(word, targetWord, isCurrentWord = false) {
