@@ -175,14 +175,82 @@ button {
     100% { margin-left: 0; }
 }
 
-/* @keyframes fadeRed {
-    35% { background-color: red; }
-    65% { background-color: red; }
-} */
+ @keyframes slideDown {
+    0% { transform: translateY(-70px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes correctLetter1 {
+    0% { 
+        transform: translateY(-70px);
+        
+    }
+    25% { transform: translateY(0px);}
+    26% { scale: 1; }
+    35% {
+        scale: 1.1;
+    }
+    45% {scale: 1}
+} 
+@keyframes correctLetter2 {
+    0% { 
+        transform: translateY(-70px);
+        
+    }
+    25% { transform: translateY(0px);}
+    45% { scale: 1; }
+    55% {
+        scale: 1.1;
+    }
+    65% {scale: 1}
+} 
+@keyframes correctLetter3 {
+    0% { 
+        transform: translateY(-70px);
+        
+    }
+    25% { transform: translateY(0px);}
+    65% { scale: 1; }
+    75% {
+        scale: 1.1;
+    }
+    85% {scale: 1}
+} 
+@keyframes correctLetter4 {
+    0% { 
+        transform: translateY(-70px);
+        
+    }
+    25% { transform: translateY(0px);}
+    85% { scale: 1; }
+    95% {
+        scale: 1.1;
+    }
+    100% {scale: 1}
+} 
 
 .letter.shake {
     animation: shake 0.5s;
 }
+
+.word.current .letter, #chainDisplay .word:last-child .letter {
+    animation: slideDown 0.2s ease-in-out 0s 1;
+}
+
+
+#chainDisplay .word.current .letter.correct:nth-child(1) {
+    animation: correctLetter1 0.7s ease-in-out 0s 1
+}
+#chainDisplay .word.current .letter.correct:nth-child(2) {
+    animation: correctLetter2 0.7s ease-in-out 0s 1
+}
+#chainDisplay .word.current .letter.correct:nth-child(3) {
+    animation: correctLetter3 0.7s ease-in-out 0s 1
+}
+#chainDisplay .word.current .letter.correct:nth-child(4) {
+    animation: correctLetter4 0.7s ease-in-out 0s 1
+}
+
 
 /* .letter.fade-red {
     animation: fadeRed 0.5s;
