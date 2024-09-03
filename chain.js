@@ -172,6 +172,18 @@ function displayWord(word, targetWord, isCurrentWord = false) {
     return wordDivContainer;
 }
 
+// Add event listener for clicks outside the word.current
+document.addEventListener('click', function(event) {
+    const currentWordElement = document.querySelector('.word.current');
+    const selectedLetter = document.querySelector('.letter.selected');
+
+    if (currentWordElement && selectedLetter && !currentWordElement.contains(event.target)) {
+        // Deselect the letter
+        selectedLetter.classList.remove('selected');
+    }
+});
+
+// Modify selectLetter to keep the input focus within the current word
 function selectLetter(letterDiv, wordDivContainer) {
     // Remove 'selected' class from all letters in the current word
     wordDivContainer.querySelectorAll('.letter').forEach(div => div.classList.remove('selected'));
@@ -198,6 +210,7 @@ function selectLetter(letterDiv, wordDivContainer) {
     // Add an event listener for typing a new letter
     input.addEventListener('input', handleLetterChange);
 }
+
 
 function handleLetterChange(event) {
     const selectedLetter = document.querySelector('.letter.selected');
