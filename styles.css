@@ -34,7 +34,7 @@ h1{
 
 #chainDisplay {
     max-height: 650px;
-    overflow-y: scroll;
+    overflow-y: auto;
     font-size: 18px;
     display: flex;
     flex-direction: column;

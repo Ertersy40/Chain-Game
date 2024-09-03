@@ -57,26 +57,28 @@ function findPath(words, startingWord, maxLength = 20) {
 }
 
 function calculateMinMoves(words, startingWord, targetWord) {
-    let queue = [[targetWord, 0]]; // Queue of [word, depth]
+    let queue = [[targetWord, 0, [targetWord]]]; // Queue of [word, depth, path]
     let visited = new Set([targetWord]);
 
     while (queue.length > 0) {
-        let [currentWord, depth] = queue.shift();
+        let [currentWord, depth, path] = queue.shift();
 
         if (currentWord === startingWord) {
+            console.log('Ideal path:', path.reverse().join(' -> ')); // Log the ideal path
             return depth; // Return the minimum depth when starting word is found
         }
 
         for (let nextWord of words[currentWord]) {
             if (!visited.has(nextWord) && isOneLetterDifferent(currentWord, nextWord)) {
                 visited.add(nextWord);
-                queue.push([nextWord, depth + 1]);
+                queue.push([nextWord, depth + 1, [...path, nextWord]]);
             }
         }
     }
 
     return Infinity; // If no path is found (should not happen in a valid game)
 }
+
 
 function saveGuesses(path) {
     localStorage.setItem('guesses', JSON.stringify(path));
@@ -195,17 +197,19 @@ function handleLetterChange(event) {
 }
 
 function findAndDisplayPath(wordData) {
-    let startingWord, path;
+    let startingWord, path, minMoves;
 
     do {
         startingWord = getRandomWord(wordData);
         path = findPath(wordData, startingWord);
-    } while (!path || path.length > 20);
+
+        if (path) {
+            const targetWord = path[path.length - 1];
+            minMoves = calculateMinMoves(wordData, startingWord, targetWord);
+        }
+    } while (!path || minMoves <= 4); // Ensure that only words with more than 5 minimum moves apart are chosen
 
     const targetWord = path[path.length - 1];
-    
-    // Calculate the minimum number of moves using BFS
-    const minMoves = calculateMinMoves(wordData, startingWord, targetWord);
 
     localStorage.setItem('startingWord', startingWord);
     localStorage.setItem('targetWord', targetWord);
@@ -221,6 +225,11 @@ function displayMinMoves(minMoves) {
 }
 
 function submitGuess(wordData, userGuess = null) {
+
+    console.log('clogclef')
+    calculateMinMoves(wordData, "clog", "clef")
+    console.log('clogclef')
+
     userGuess = userGuess || document.getElementById('userGuess').value.trim().toLowerCase();
     const guesses = loadGuesses();
     const currentWord = guesses.length > 0 ? guesses[guesses.length - 1] : localStorage.getItem('startingWord');
@@ -257,7 +266,8 @@ function endGame(wordData) {
     const playerScore = guesses.length - 1;
     showWinModal(playerScore, minMoves);
 
-    addShareResultsButton()
+    // Add "Share your results" button to the bottom of the page
+    addShareResultsButton();
 }
 
 function showWinModal(playerScore, minMoves) {
@@ -266,7 +276,7 @@ function showWinModal(playerScore, minMoves) {
     const shareButton = document.getElementById('shareButton');
     const closeModalButton = document.getElementById('closeModalButton');
 
-    scoreMessage.textContent = `Score: ${playerScore}/${minMoves}`;
+    scoreMessage.textContent = `You completed the game in ${playerScore} moves! The minimum possible moves were ${minMoves}.`;
 
     // Share button functionality
     shareButton.onclick = function() {
@@ -315,7 +325,6 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 };
-
 
 document.addEventListener("DOMContentLoaded", () => {
     loadWordData('word_differences.json', findAndDisplayPath);
