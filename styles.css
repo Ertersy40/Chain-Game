@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+#output, #chainDisplay {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.word {
+    margin-top: 10px;
+    display: grid;
+    width: 300px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+}
+
+.letter {
+    width: 2em;
+    height: 2em;
+    opacity: 0.4;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.word.current .letter {
+    background-color: #edeff1;
+    opacity: 1;
+}
+
+.word.current .letter:hover {
+    cursor: pointer;
+}
+
+.word.current .letter.selected {
+    background-color: rgb(169, 118, 218);
+}
+
+#output .letter {
+    opacity: 1;
+}
+
+#chainDisplay .word:last-child .letter, #chainDisplay .word:first-child .letter {
+    opacity: 1;
+}
+
+button, input {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#guessInput {
+    margin-top: 20px;
+}
+
+#confetti-canvas{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
