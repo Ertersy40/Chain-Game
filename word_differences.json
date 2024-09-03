@@ -198,7 +198,6 @@
     ],
     "anus": [
         "ants",
-        "gnus",
         "onus"
     ],
     "aped": [
@@ -6003,7 +6002,6 @@
         "feed",
         "geek",
         "gees",
-        "geld",
         "heed",
         "need",
         "peed",
@@ -6036,20 +6034,10 @@
         "tees",
         "wees"
     ],
-    "geld": [
-        "geed",
-        "gels",
-        "gild",
-        "gold",
-        "held",
-        "meld",
-        "weld"
-    ],
     "gels": [
         "eels",
         "gals",
         "gees",
-        "geld",
         "gems",
         "gets"
     ],
@@ -6096,7 +6084,6 @@
         "wets"
     ],
     "gift": [
-        "gilt",
         "gist",
         "lift",
         "rift",
@@ -6112,21 +6099,11 @@
         "rigs",
         "wigs"
     ],
-    "gild": [
-        "geld",
-        "gill",
-        "gilt",
-        "gold",
-        "mild",
-        "wild"
-    ],
     "gill": [
         "bill",
         "dill",
         "fill",
         "gall",
-        "gild",
-        "gilt",
         "girl",
         "gull",
         "hill",
@@ -6136,19 +6113,6 @@
         "sill",
         "till",
         "will"
-    ],
-    "gilt": [
-        "gift",
-        "gild",
-        "gill",
-        "gist",
-        "hilt",
-        "jilt",
-        "kilt",
-        "lilt",
-        "silt",
-        "tilt",
-        "wilt"
     ],
     "gins": [
         "bins",
@@ -6167,7 +6131,6 @@
     "gist": [
         "fist",
         "gift",
-        "gilt",
         "gust",
         "list",
         "mist",
@@ -6189,18 +6152,10 @@
     ],
     "glee": [
         "flee",
-        "glen",
         "glue"
-    ],
-    "glen": [
-        "glee"
-    ],
-    "glib": [
-        "glob"
     ],
     "glob": [
         "blob",
-        "glib",
         "glow",
         "slob"
     ],
@@ -6216,20 +6171,12 @@
         "clue",
         "flue",
         "glee",
-        "glum",
-        "glut"
+        "glum"
     ],
     "glum": [
         "glue",
-        "glut",
         "plum",
         "slum"
-    ],
-    "glut": [
-        "glue",
-        "glum",
-        "gout",
-        "slut"
     ],
     "gnat": [
         "gnaw",
@@ -6237,10 +6184,6 @@
     ],
     "gnaw": [
         "gnat"
-    ],
-    "gnus": [
-        "anus",
-        "onus"
     ],
     "goad": [
         "glad",
@@ -6305,8 +6248,6 @@
         "bold",
         "cold",
         "fold",
-        "geld",
-        "gild",
         "goad",
         "golf",
         "good",
@@ -6391,7 +6332,6 @@
     ],
     "gout": [
         "bout",
-        "glut",
         "goat",
         "pout",
         "rout",
@@ -7041,7 +6981,6 @@
         "hear"
     ],
     "held": [
-        "geld",
         "head",
         "heed",
         "hell",
@@ -7220,7 +7159,6 @@
         "will"
     ],
     "hilt": [
-        "gilt",
         "halt",
         "hill",
         "hint",
@@ -8050,7 +7988,6 @@
         "wigs"
     ],
     "jilt": [
-        "gilt",
         "hilt",
         "jolt",
         "kilt",
@@ -8305,7 +8242,6 @@
         "silo"
     ],
     "kilt": [
-        "gilt",
         "hilt",
         "jilt",
         "kill",
@@ -9073,7 +9009,6 @@
         "pike"
     ],
     "lilt": [
-        "gilt",
         "hilt",
         "jilt",
         "kilt",
@@ -10148,7 +10083,6 @@
         "pegs"
     ],
     "meld": [
-        "geld",
         "held",
         "melt",
         "mend",
@@ -10257,7 +10191,6 @@
         "pike"
     ],
     "mild": [
-        "gild",
         "meld",
         "mile",
         "milk",
@@ -11401,7 +11334,6 @@
     ],
     "onus": [
         "anus",
-        "gnus",
         "ones",
         "opus"
     ],
@@ -15208,7 +15140,6 @@
         "solo"
     ],
     "silt": [
-        "gilt",
         "hilt",
         "jilt",
         "kilt",
@@ -15658,7 +15589,6 @@
         "spur"
     ],
     "slut": [
-        "glut",
         "shut",
         "slat",
         "slit",
@@ -17101,7 +17031,6 @@
         "will"
     ],
     "tilt": [
-        "gilt",
         "hilt",
         "jilt",
         "kilt",
@@ -18504,7 +18433,6 @@
         "woes"
     ],
     "weld": [
-        "geld",
         "held",
         "meld",
         "weed",
@@ -18697,7 +18625,6 @@
         "wits"
     ],
     "wild": [
-        "gild",
         "mild",
         "weld",
         "wile",
@@ -18745,7 +18672,6 @@
         "wily"
     ],
     "wilt": [
-        "gilt",
         "hilt",
         "jilt",
         "kilt",
