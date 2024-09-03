@@ -5,7 +5,13 @@ function loadWordData(filePath, callback) {
         .catch(error => console.error('Error loading word data:', error));
 }
 
+function getTodayDateString() {
+    const today = new Date();
+    return `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+}
+
 function seededRandom(seed) {
+    console.log(seed)
     var x = Math.sin(seed) * 10000;
     return x - Math.floor(x);
 }
@@ -64,12 +70,12 @@ function findPath(words, startingWord, maxLength = 20) {
 function findAndDisplayPath(wordData) {
     // Generate a seed based on today's date
     const today = new Date();
-    const baseSeed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+    const baseSeed = `${today.getFullYear()}${today.getMonth() + 1}${today.getDate()}`;
 
     let startingWord, path, minMoves, seedIncrement = 0;
 
     do {
-        const seed = baseSeed + seedIncrement; // Increment seed slightly each iteration
+        const seed = parseInt(baseSeed + seedIncrement, 10);; // Increment seed slightly each iteration
         startingWord = getRandomWord(wordData, seed);
         path = findPath(wordData, startingWord);
 
@@ -86,7 +92,8 @@ function findAndDisplayPath(wordData) {
     localStorage.setItem('startingWord', startingWord);
     localStorage.setItem('targetWord', targetWord);
     localStorage.setItem('guesses', JSON.stringify([startingWord])); // Start with the starting word
-    
+    localStorage.setItem('LastPlayed', getTodayDateString()); // Store today's date
+
     displayChain([startingWord], targetWord); // Display the initial chain
 }
 
@@ -113,6 +120,25 @@ function calculateMinMoves(words, startingWord, targetWord) {
     return Infinity; // If no path is found (should not happen in a valid game)
 }
 
+function initializeGame(wordData) {
+    const lastPlayed = localStorage.getItem('LastPlayed');
+    const today = getTodayDateString();
+
+    if (lastPlayed === today) {
+        console.log("PLAYED TODAY")
+        // If the game was already played today, load from localStorage
+        const startingWord = localStorage.getItem('startingWord');
+        const targetWord = localStorage.getItem('targetWord');
+        const guesses = JSON.parse(localStorage.getItem('guesses')) || [startingWord];
+
+        displayChain(guesses, targetWord); // Display the chain
+        const minMoves = calculateMinMoves(wordData, startingWord, targetWord);
+    } else {
+        console.log("NEW GAME")
+        // If the game hasn't been played today, run findAndDisplayPath
+        findAndDisplayPath(wordData);
+    }
+}
 
 function saveGuesses(path) {
     localStorage.setItem('guesses', JSON.stringify(path));
@@ -255,10 +281,10 @@ function handleLetterChange(event) {
 
 
 
-function displayMinMoves(minMoves) {
-    const minMovesDiv = document.getElementById('minMovesDisplay');
-    minMovesDiv.textContent = `Minimum possible moves: ${minMoves}`;
-}
+// function displayMinMoves(minMoves) {
+//     const minMovesDiv = document.getElementById('minMovesDisplay');
+//     minMovesDiv.textContent = `Minimum possible moves: ${minMoves}`;
+// }
 
 function submitGuess(wordData, userGuess = null) {
 
@@ -363,5 +389,5 @@ window.onclick = function(event) {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    loadWordData('word_differences.json', findAndDisplayPath);
+    loadWordData('word_differences.json', initializeGame);
 });
