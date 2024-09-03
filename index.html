@@ -7,14 +7,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <h1>WordChains.xyz</h1>
-    <div id="output">
-        <!-- The starting word, chain, and target word will be displayed here -->
+    <div id="gameAndAds">
+        <div id="gameArea">
+            <h1>WordChains.xyz</h1>
+            
+            <div id="output">
+                <!-- The starting word, chain, and target word will be displayed here -->
+            </div>
+            
+            <div id="chainDisplay">
+                <!-- The current chain will be displayed here -->
+            </div>
+            <div id="minMovesDisplay"></div>
+        </div>
     </div>
-
-    <div id="chainDisplay">
-        <!-- The current chain will be displayed here -->
+    <div id="winModal" class="modal">
+        <div class="modal-content">
+            <h2>Congratulations!</h2>
+            <p id="scoreMessage"></p>
+            <button id="shareButton">Share</button>
+            <button id="closeModalButton">Close</button>
+        </div>
     </div>
 
     <canvas id="confetti-canvas" style="display: none;"></canvas>

@@ -1,8 +1,37 @@
-body {
+html, body {
     font-family: Arial, sans-serif;
     text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+}
+
+:root {
+    --green: #6fb05c;
+    --background: white;
+    --border: #ececec;
+    --tile-color: #ececec;
+    --tile-selected: rgb(169, 118, 218);
+}
+
+h1{
     margin-top: 50px;
 }
+
+#gameAndAds {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: var(--border);
+}
+
+#gameArea {
+    background-color: var(--background);
+    height: 100%;
+    width: 728px;
+}
+
 #output, #chainDisplay {
     font-size: 18px;
     display: flex;
@@ -30,9 +59,18 @@ body {
     justify-content: center;
 }
 
+.letter.correct {
+    color: var(--green);
+}
+
 .word.current .letter {
-    background-color: #edeff1;
+    background-color: var(--tile-color);
     opacity: 1;
+}
+
+.word.current .letter.correct {
+    background-color: var(--green);
+    color: rgb(255, 255, 255);
 }
 
 .word.current .letter:hover {
@@ -40,7 +78,7 @@ body {
 }
 
 .word.current .letter.selected {
-    background-color: rgb(169, 118, 218);
+    background-color: var(--tile-selected);
 }
 
 #output .letter {
@@ -64,4 +102,60 @@ button, input {
     position: absolute;
     top: 0;
     right: 0;
+}
+
+#minMovesDisplay {
+    margin-top: 40px;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px 40px;
+    border: 1px solid #888;
+    width: fit-content; /* Could be more or less, depending on screen size */
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+.modal-content h2 {
+    margin-top: 0.5rem;
+}
+
+button {
+    border-radius: 0.5rem;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#shareButton {
+    background-color: var(--green);
+    color: white;
+    border: none;
+}
+
+#closeModalButton {
+    background-color: var(--tile-color);
+    color: black;
+    border: none;
+}
+
+#hiddenInput{
+    top: 0;
+    left: 0;
 }

@@ -32,7 +32,7 @@ function findPath(words, startingWord, maxLength = 20) {
                 if (hasNoSimilarLetters(startingWord, nextWord)) {
                     path.push(nextWord);
                     saveGuesses(path);
-                    return path;
+                    return path; // Return the path found
                 } else {
                     visited.add(nextWord);
                     path.push(nextWord);
@@ -53,7 +53,29 @@ function findPath(words, startingWord, maxLength = 20) {
     }
 
     saveGuesses(path);
-    return null;
+    return path; // Return the path found
+}
+
+function calculateMinMoves(words, startingWord, targetWord) {
+    let queue = [[targetWord, 0]]; // Queue of [word, depth]
+    let visited = new Set([targetWord]);
+
+    while (queue.length > 0) {
+        let [currentWord, depth] = queue.shift();
+
+        if (currentWord === startingWord) {
+            return depth; // Return the minimum depth when starting word is found
+        }
+
+        for (let nextWord of words[currentWord]) {
+            if (!visited.has(nextWord) && isOneLetterDifferent(currentWord, nextWord)) {
+                visited.add(nextWord);
+                queue.push([nextWord, depth + 1]);
+            }
+        }
+    }
+
+    return Infinity; // If no path is found (should not happen in a valid game)
 }
 
 function saveGuesses(path) {
@@ -71,22 +93,22 @@ function displayChain(guesses, targetWord) {
 
     // Display each word in the guesses list
     guesses.slice(0, guesses.length - 1).forEach(guess => {
-        const guessDivContainer = displayWord(guess);
+        const guessDivContainer = displayWord(guess, targetWord);
         chainDiv.appendChild(guessDivContainer);
     });
 
     // Display the current word as the current word
-    const guessDivContainer = displayWord(guesses[guesses.length - 1], true);
+    const guessDivContainer = displayWord(guesses[guesses.length - 1], targetWord, true);
     chainDiv.appendChild(guessDivContainer);
 
     if (guesses[guesses.length - 1] !== targetWord) {
         // If the target word isn't guessed (the game hasn't finished) display the target word
-        const targetDivContainer = displayWord(targetWord);
+        const targetDivContainer = displayWord(targetWord, targetWord);
         chainDiv.appendChild(targetDivContainer);
     }
 }
 
-function displayWord(word, isCurrentWord = false) {
+function displayWord(word, targetWord, isCurrentWord = false) {
     const wordDivContainer = document.createElement('div');
     wordDivContainer.className = 'word';
     if (isCurrentWord) {
@@ -98,7 +120,16 @@ function displayWord(word, isCurrentWord = false) {
         letterDiv.className = 'letter';
         letterDiv.textContent = letter;
         letterDiv.dataset.index = index;
-        letterDiv.addEventListener('click', () => selectLetter(letterDiv, wordDivContainer));
+
+        // Add green class if the letter is correct and in the correct position
+        if (targetWord[index] === letter) {
+            letterDiv.classList.add('correct');
+        }
+
+        if (isCurrentWord) {
+            letterDiv.addEventListener('click', () => selectLetter(letterDiv, wordDivContainer));
+        }
+
         wordDivContainer.appendChild(letterDiv);
     });
 
@@ -149,7 +180,7 @@ function handleLetterChange(event) {
         const newWord = wordArray.join('');
 
         // Check if the new word is valid
-        const wordData = loadWordData('word_differences.json', (wordData) => {
+        loadWordData('word_differences.json', (wordData) => {
             const guesses = loadGuesses();
             const currentWord = guesses[guesses.length - 1];
             if (wordData[newWord] && isOneLetterDifferent(currentWord, newWord)) {
@@ -172,12 +203,21 @@ function findAndDisplayPath(wordData) {
     } while (!path || path.length > 20);
 
     const targetWord = path[path.length - 1];
+    
+    // Calculate the minimum number of moves using BFS
+    const minMoves = calculateMinMoves(wordData, startingWord, targetWord);
 
     localStorage.setItem('startingWord', startingWord);
     localStorage.setItem('targetWord', targetWord);
     localStorage.setItem('guesses', JSON.stringify([startingWord])); // Start with the starting word
     
     displayChain([startingWord], targetWord); // Display the initial chain
+    displayMinMoves(minMoves); // Display the minimum possible moves
+}
+
+function displayMinMoves(minMoves) {
+    const minMovesDiv = document.getElementById('minMovesDisplay');
+    minMovesDiv.textContent = `Minimum possible moves: ${minMoves}`;
 }
 
 function submitGuess(wordData, userGuess = null) {
@@ -193,17 +233,14 @@ function submitGuess(wordData, userGuess = null) {
         displayChain(guesses, targetWord); // Update the chain display
 
         if (userGuess === targetWord) {
-            endGame();
-            
+            endGame(wordData);
         }
     } else {
         console.log(currentWord);
     }
-
-    document.getElementById('userGuess').value = ''; // Clear the input field
 }
 
-function endGame() {
+function endGame(wordData) {
     burstConfetti(); 
 
     // Deselect all letters
@@ -213,7 +250,55 @@ function endGame() {
     document.querySelectorAll('.letter').forEach(letter => {
         letter.replaceWith(letter.cloneNode(true)); // Cloning removes all event listeners
     });
+
+    // Show the win modal
+    const guesses = loadGuesses();
+    const minMoves = calculateMinMoves(wordData, guesses[0], localStorage.getItem('targetWord'));
+    const playerScore = guesses.length - 1;
+    showWinModal(playerScore, minMoves);
 }
+
+function showWinModal(playerScore, minMoves) {
+    const modal = document.getElementById('winModal');
+    const scoreMessage = document.getElementById('scoreMessage');
+    const shareButton = document.getElementById('shareButton');
+    const closeModalButton = document.getElementById('closeModalButton');
+
+    scoreMessage.textContent = `Score: ${playerScore}/${minMoves}`;
+
+    // Share button functionality
+    shareButton.onclick = function() {
+        const shareText = `I completed the word game in ${playerScore} moves, with the minimum possible being ${minMoves}! Can you beat my score?`;
+        if (navigator.share) {
+            navigator.share({
+                title: 'Word Game',
+                text: shareText,
+                url: window.location.href
+            }).then(() => {
+                console.log('Thanks for sharing!');
+            }).catch(console.error);
+        } else {
+            alert('Sharing is not supported in this browser. Copy the link manually!');
+        }
+    };
+
+    // Close button functionality
+    closeModalButton.onclick = function() {
+        modal.style.display = 'none';
+    };
+
+    // Display the modal
+    modal.style.display = 'block';
+}
+
+// Close the modal if the user clicks anywhere outside of it
+window.onclick = function(event) {
+    const modal = document.getElementById('winModal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+};
+
 
 document.addEventListener("DOMContentLoaded", () => {
     loadWordData('word_differences.json', findAndDisplayPath);
