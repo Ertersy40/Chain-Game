@@ -256,6 +256,8 @@ function endGame(wordData) {
     const minMoves = calculateMinMoves(wordData, guesses[0], localStorage.getItem('targetWord'));
     const playerScore = guesses.length - 1;
     showWinModal(playerScore, minMoves);
+
+    addShareResultsButton()
 }
 
 function showWinModal(playerScore, minMoves) {
@@ -289,6 +291,21 @@ function showWinModal(playerScore, minMoves) {
 
     // Display the modal
     modal.style.display = 'block';
+}
+
+function addShareResultsButton() {
+    const container = document.getElementById('shareResultsContainer');
+    container.innerHTML = ''; // Clear any previous button
+
+    const shareButton = document.createElement('button');
+    shareButton.id = 'shareResultsButton';
+    shareButton.textContent = 'Share your results';
+    shareButton.onclick = function() {
+        const modal = document.getElementById('winModal');
+        modal.style.display = 'block'; // Open the win modal when the button is clicked
+    };
+
+    container.appendChild(shareButton);
 }
 
 // Close the modal if the user clicks anywhere outside of it
