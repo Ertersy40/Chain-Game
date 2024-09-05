@@ -164,20 +164,44 @@ function displayChain(guesses, targetWord) {
     chainDiv.appendChild(guessDivContainer);
 
     if (guesses[guesses.length - 1] !== targetWord) {
-        // If the target word isn't guessed (the game hasn't finished) display the target word
+        // Display the target word if the game isn't finished
         const targetDivContainer = displayWord(targetWord, targetWord);
         chainDiv.appendChild(targetDivContainer);
     }
 
+    // Add the slideDown class to the current word and the last word
+    const currentWordDiv = chainDiv.querySelector('.word.current');
+    const lastWordDiv = chainDiv.querySelector('.word:last-child');
+
+    if (currentWordDiv) {
+        currentWordDiv.classList.add('slideDown');
+    }
+    if (lastWordDiv && lastWordDiv !== currentWordDiv) {
+        lastWordDiv.classList.add('slideDown');
+    }
+
+    // Remove the slideDown class after the animation is done (0.2 seconds)
+    setTimeout(() => {
+        if (currentWordDiv) {
+            currentWordDiv.classList.remove('slideDown');
+        }
+        if (lastWordDiv && lastWordDiv !== currentWordDiv) {
+            lastWordDiv.classList.remove('slideDown');
+        }
+    }, 200); // 200ms corresponds to the 0.2s animation duration
+
+    // Smooth scroll to the bottom of the div and body
     chainDiv.scrollTo({
         top: chainDiv.scrollHeight,
-        behavior: 'smooth' // This makes the scroll smooth
+        behavior: 'smooth'
     });
+
     document.body.scrollTo({
-        top: document.body.scrollHeight -216,
-        behavior: 'smooth' // This makes the scroll smooth
+        top: document.body.scrollHeight - 216,
+        behavior: 'smooth'
     });
 }
+
 
 function displayWord(word, targetWord, isCurrentWord = false) {
     const wordDivContainer = document.createElement('div');
@@ -274,10 +298,10 @@ function handleLetterChange(event) {
                 submitGuess(wordData, newWord); // Submit the guess if valid
             } else {
                 // If the word is invalid, trigger the shake and fade animation
-                selectedLetter.classList.add('shake', 'fade-red');
+                selectedLetter.classList.add('shake');
                 
                 setTimeout(() => {
-                    selectedLetter.classList.remove('shake', 'fade-red');
+                    selectedLetter.classList.remove('shake');
                 }, 500);
             }
         });

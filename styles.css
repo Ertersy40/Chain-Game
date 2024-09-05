@@ -222,29 +222,35 @@ button {
 } 
 
 
+
 .letter.shake {
-    animation: shake 0.5s;
+    animation: shake 0.5s ease-in-out;
+    animation-play-state: paused; /* Paused by default */
 }
 
-.word.current .letter, #chainDisplay .word:last-child .letter {
+.word.current .letter.shake {
+    animation-play-state: running; /* Play shake when it's the current word */
+}
+
+
+
+/* .word.current .letter, #chainDisplay .word:last-child .letter {
     animation: slideDown 0.2s ease-in-out 0s 1;
-}
-
+} */
 
 #chainDisplay .word.current .letter.correct:nth-child(1) {
-    animation: correctLetter1 0.7s ease-in-out 0s 1
+    animation: correctLetter1 0.7s ease-in-out 0s 1 
 }
 #chainDisplay .word.current .letter.correct:nth-child(2) {
-    animation: correctLetter2 0.7s ease-in-out 0s 1
+    animation: correctLetter2 0.7s ease-in-out 0s 1;
 }
 #chainDisplay .word.current .letter.correct:nth-child(3) {
-    animation: correctLetter3 0.7s ease-in-out 0s 1
+    animation: correctLetter3 0.7s ease-in-out 0s 1;
 }
 #chainDisplay .word.current .letter.correct:nth-child(4) {
-    animation: correctLetter4 0.7s ease-in-out 0s 1
+    animation: correctLetter4 0.7s ease-in-out 0s 1;
 }
 
-
-/* .letter.fade-red {
-    animation: fadeRed 0.5s;
-} */
+.word.slideDown .letter {
+    animation: slideDown 0.2s ease-in-out 0s 1;
+}
