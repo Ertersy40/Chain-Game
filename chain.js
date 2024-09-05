@@ -1,3 +1,4 @@
+// localStorage.setItem('guesses', '["carp"]')
 function loadWordData(filePath, callback) {
     fetch(filePath)
         .then(response => response.json())
@@ -197,7 +198,7 @@ function displayChain(guesses, targetWord) {
     });
 
     document.body.scrollTo({
-        top: document.body.scrollHeight - 216,
+        top: 0,
         behavior: 'smooth'
     });
 }
@@ -239,6 +240,9 @@ document.addEventListener('click', function(event) {
     if (currentWordElement && selectedLetter && !currentWordElement.contains(event.target)) {
         // Deselect the letter
         selectedLetter.classList.remove('selected');
+
+        const lastWord = document.querySelector('#chainDisplay .word:last-child');
+        lastWord.classList.remove('shift-down');
     }
 });
 
@@ -250,13 +254,18 @@ function selectLetter(letterDiv, wordDivContainer) {
     // Add 'selected' class to the clicked letter
     letterDiv.classList.add('selected');
 
+    const lastWord = document.querySelector('#chainDisplay .word:last-child');
+    if (lastWord) {
+        lastWord.classList.add('shift-down');
+    }
+
     // Create an invisible input field for mobile keyboard
     let input = document.getElementById('hiddenInput');
     if (!input) {
         input = document.createElement('input');
         input.type = 'text';
         input.id = 'hiddenInput';
-        input.style.position = 'absolute';
+        input.style.position = 'fixed';
         input.style.opacity = '0';
         input.style.height = '0';
         input.style.width = '0';
@@ -269,6 +278,7 @@ function selectLetter(letterDiv, wordDivContainer) {
     // Add an event listener for typing a new letter
     input.addEventListener('input', handleLetterChange);
 }
+
 
 
 function handleLetterChange(event) {
@@ -293,6 +303,7 @@ function handleLetterChange(event) {
         // Check if the new word is valid
         loadWordData('word_differences.json', (wordData) => {
             const guesses = loadGuesses();
+            console.log('guesses:', guesses)
             const currentWord = guesses[guesses.length - 1];
             if (wordData[newWord] && isOneLetterDifferent(currentWord, newWord)) {
                 submitGuess(wordData, newWord); // Submit the guess if valid

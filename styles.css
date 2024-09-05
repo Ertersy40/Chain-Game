@@ -11,7 +11,7 @@ html, body {
     --background: white;
     --border: #ececec;
     --tile-color: #ececec;
-    --tile-selected: rgb(169, 118, 218);
+    --tile-selected: rgb(190, 190, 190);
 }
 
 h1{
@@ -50,10 +50,11 @@ h1{
 }
 
 .letter {
+    background-color: rgb(245, 245, 245);
     width: 2em;
     height: 2em;
-    opacity: 0.4;
-    border-radius: 0.5rem;
+    /* opacity: 0.4; */
+    border-radius: 1rem;
     font-weight: 700;
     font-size: 2rem;
     display: flex;
@@ -68,8 +69,10 @@ h1{
 }
 
 .word.current .letter {
+    transition: all 0.2s ease-in-out;
+    
+    box-shadow: 5px 5px 0px 0px rgb(143, 143, 143);
     background-color: var(--tile-color);
-    opacity: 1;
 }
 
 .word.current .letter.correct {
@@ -77,22 +80,32 @@ h1{
     color: rgb(255, 255, 255);
 }
 
-.word.current .letter:hover {
+.word.current .letter.selected, #chainDisplay .word.current .letter:hover {
+    transform: translateX(0) translateY(0);
+    box-shadow: 0px 0px;
+    background-color: var(--tile-selected);
+}
+#chainDisplay .word.current .letter:hover {
     cursor: pointer;
 }
 
-.word.current .letter.selected {
-    background-color: var(--tile-selected);
-    color: white;
+
+.word.current .letter:not(.selected){
+    transform: translateX(-5px) translateY(-5px)
 }
 
-#output .letter {
+/* #output .letter {
     opacity: 1;
 }
 
 #chainDisplay .word:last-child .letter, #chainDisplay .word:first-child .letter {
     opacity: 1;
+} */
+
+#chainDisplay .word:last-child .letter {
+    transition: all 0.2s ease-in-out;
 }
+
 
 button, input {
     padding: 10px 20px;
@@ -101,6 +114,7 @@ button, input {
 }
 #guessInput {
     margin-top: 20px;
+    
 }
 
 #confetti-canvas{
@@ -162,8 +176,10 @@ button {
 }
 
 #hiddenInput{
-    bottom: 0;
+    top: 50%;
     left: 0;
+    /* font-size: 0; */
+    transform: scale(0);
 }
 
 @keyframes shake {
@@ -221,8 +237,6 @@ button {
     100% { scale: 1; }
 } 
 
-
-
 .letter.shake {
     animation: shake 0.5s ease-in-out;
     animation-play-state: paused; /* Paused by default */
@@ -231,12 +245,6 @@ button {
 .word.current .letter.shake {
     animation-play-state: running; /* Play shake when it's the current word */
 }
-
-
-
-/* .word.current .letter, #chainDisplay .word:last-child .letter {
-    animation: slideDown 0.2s ease-in-out 0s 1;
-} */
 
 #chainDisplay .word.current .letter.correct:nth-child(1) {
     animation: correctLetter1 0.7s ease-in-out 0s 1 
