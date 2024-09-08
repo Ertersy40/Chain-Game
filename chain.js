@@ -254,42 +254,35 @@ function selectLetter(letterDiv, wordDivContainer) {
     // Add 'selected' class to the clicked letter
     letterDiv.classList.add('selected');
 
-    const lastWord = document.querySelector('#chainDisplay .word:last-child');
-    if (lastWord) {
-        lastWord.classList.add('shift-down');
-    }
-
-    // Create an invisible input field for mobile keyboard
-    let input = document.getElementById('hiddenInput');
-    if (!input) {
-        input = document.createElement('input');
-        input.type = 'text';
-        input.id = 'hiddenInput';
-        input.style.position = 'fixed';
-        input.style.opacity = '0';
-        input.style.height = '0';
-        input.style.width = '0';
-        document.body.appendChild(input);
-    }
-
-    // Focus on the hidden input to pull up the keyboard on mobile
-    input.focus();
-
-    // Add an event listener for typing a new letter
-    input.addEventListener('input', handleLetterChange);
+    console.log("adding input event listener to letterdiv", letterDiv)
+    document.addEventListener('keydown', handleLetterChange);
 }
+
+document.getElementById('customKeyboard').addEventListener('click', function(event) {
+    const clickedKey = event.target.textContent.trim();
+
+    if (clickedKey.length === 1 && /[a-zA-Z]/.test(clickedKey)) {
+        handleLetterChange(clickedKey.toLowerCase());
+    }
+});
 
 
 
 function handleLetterChange(event) {
+    console.log("LETTER CHANGEEE")
     const selectedLetter = document.querySelector('.letter.selected');
     if (!selectedLetter) {
         console.log('no selected letter?')
         return
     };
+    let newLetter;
+    if (event.key){
+        newLetter = event.key.toLowerCase();
+    } else {
+        newLetter = event;
+    }
 
-    const newLetter = event.target.value.toLowerCase();
-    event.target.value = '';  // Clear the input field for the next entry
+    // event.target.value = '';  // Clear the input field for the next entry
 
     if (newLetter.length === 1 && /[a-z]/.test(newLetter)) {
         const wordDivContainer = selectedLetter.closest('.word');
