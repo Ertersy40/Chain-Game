@@ -86,7 +86,7 @@ function findAndDisplayPath(wordData) {
         }
 
         seedIncrement++; // Increment to try a different seed in case of failure
-    } while (!path || minMoves <= 5); // Ensure that only words with more than 5 minimum moves apart are chosen
+    } while (!path || minMoves < 5 || minMoves >= 6); // Ensure that only words with more than 5 minimum moves apart are chosen
 
     const targetWord = path[path.length - 1];
 
@@ -95,7 +95,7 @@ function findAndDisplayPath(wordData) {
     localStorage.setItem('guesses', JSON.stringify([startingWord])); // Start with the starting word
     localStorage.setItem('LastPlayed', getTodayDateString()); // Store today's date
 
-    displayChain([startingWord], targetWord); // Display the initial chain
+    displayChain(wordData, [startingWord], targetWord); // Display the initial chain
 }
 
 function calculateMinMoves(words, startingWord, targetWord) {
@@ -124,25 +124,25 @@ function calculateMinMoves(words, startingWord, targetWord) {
 function initializeGame(wordData) {
     const lastPlayed = localStorage.getItem('LastPlayed');
     const today = getTodayDateString();
+    findAndDisplayPath(wordData);
+    // if (lastPlayed === today) {
+    //     // If the game was already played today, load from localStorage
+    //     const startingWord = localStorage.getItem('startingWord');
+    //     const targetWord = localStorage.getItem('targetWord');
+    //     const guesses = JSON.parse(localStorage.getItem('guesses')) || [startingWord];
 
-    if (lastPlayed === today) {
-        // If the game was already played today, load from localStorage
-        const startingWord = localStorage.getItem('startingWord');
-        const targetWord = localStorage.getItem('targetWord');
-        const guesses = JSON.parse(localStorage.getItem('guesses')) || [startingWord];
+    //     displayChain(wordData, guesses, targetWord); // Display the chain
 
-        displayChain(guesses, targetWord); // Display the chain
-
-        // Check if the game was won
-        if (guesses[guesses.length - 1] === targetWord) {
-            endGame(wordData);
-        } else {
-            calculateMinMoves(wordData, startingWord, targetWord);
-        }
-    } else {
-        // If the game hasn't been played today, run findAndDisplayPath
-        findAndDisplayPath(wordData);
-    }
+    //     // Check if the game was won
+    //     if (guesses[guesses.length - 1] === targetWord) {
+    //         endGame(wordData);
+    //     } else {
+    //         calculateMinMoves(wordData, startingWord, targetWord);
+    //     }
+    // } else {
+    //     // If the game hasn't been played today, run findAndDisplayPath
+        
+    // }
 }
 
 
@@ -155,23 +155,23 @@ function loadGuesses() {
     return guesses ? JSON.parse(guesses) : [];
 }
 
-function displayChain(guesses, targetWord) {
+function displayChain(wordData, guesses, targetWord) {
     const chainDiv = document.getElementById('chainDisplay');
     chainDiv.innerHTML = ''; // Clear previous content
 
     // Display each word in the guesses list
     guesses.slice(0, guesses.length - 1).forEach(guess => {
-        const guessDivContainer = displayWord(guess, targetWord);
+        const guessDivContainer = displayWord(wordData, guess, targetWord);
         chainDiv.appendChild(guessDivContainer);
     });
 
     // Display the current word as the current word
-    const guessDivContainer = displayWord(guesses[guesses.length - 1], targetWord, true);
+    const guessDivContainer = displayWord(wordData, guesses[guesses.length - 1], targetWord, true);
     chainDiv.appendChild(guessDivContainer);
 
     if (guesses[guesses.length - 1] !== targetWord) {
         // Display the target word if the game isn't finished
-        const targetDivContainer = displayWord(targetWord, targetWord);
+        const targetDivContainer = displayWord(wordData, targetWord, targetWord);
         chainDiv.appendChild(targetDivContainer);
     }
 
@@ -209,12 +209,15 @@ function displayChain(guesses, targetWord) {
 }
 
 
-function displayWord(word, targetWord, isCurrentWord = false) {
+function displayWord(wordData, word, targetWord, isCurrentWord = false) {
     const wordDivContainer = document.createElement('div');
     wordDivContainer.className = 'word';
     if (isCurrentWord) {
         wordDivContainer.classList.add('current');
     }
+
+    const moves = calculateMinMoves(wordData, word, targetWord); // Calculate moves from current word to target word
+    const color = getColorBasedOnMoves(moves); // Get the color based on moves
 
     word.split('').forEach((letter, index) => {
         const letterDiv = document.createElement('div');
@@ -227,6 +230,8 @@ function displayWord(word, targetWord, isCurrentWord = false) {
             letterDiv.classList.add('correct');
         }
 
+        letterDiv.style.backgroundColor = color; // Apply the color based on moves
+
         if (isCurrentWord) {
             letterDiv.addEventListener('click', () => selectLetter(letterDiv, wordDivContainer));
         }
@@ -236,6 +241,7 @@ function displayWord(word, targetWord, isCurrentWord = false) {
 
     return wordDivContainer;
 }
+
 
 // Add event listener for clicks outside the word.current
 document.addEventListener('click', function(event) {
@@ -341,7 +347,7 @@ function submitGuess(wordData, userGuess = null) {
         guesses.push(userGuess);
         saveGuesses(guesses);
 
-        displayChain(guesses, targetWord); // Update the chain display
+        displayChain(wordData, guesses, targetWord); // Update the chain display
 
         if (userGuess === targetWord) {
             endGame(wordData);
@@ -350,6 +356,27 @@ function submitGuess(wordData, userGuess = null) {
         // console.log(currentWord);
     }
 }
+
+
+function getColorBasedOnMoves(moves) {
+    const colorMapping = {
+        0: 'rgb(111, 176, 92)',    // Green
+        1: 'rgb(137, 176, 92)',
+        2: 'rgb(185, 196, 81)',
+        3: 'rgb(196, 177, 81)',
+        4: 'rgb(196, 154, 81)',
+        5: 'rgb(199, 118, 52)',    // Red
+        6: 'rgb(196, 116, 81)',
+        7: 'rgb(196, 85, 81)',
+        8: 'rgb(212, 59, 59)',
+        9: 'rgb(219, 24, 24)',
+        10: 'rgb(130, 17, 7)' // Deep Red
+    };
+    
+    const clampedMoves = Math.min(moves, 10); // Clamp moves to a maximum of 10
+    return colorMapping[clampedMoves];
+}
+
 
 function endGame(wordData) {
     burstConfetti(); 
