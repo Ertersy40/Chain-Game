@@ -124,25 +124,25 @@ function calculateMinMoves(words, startingWord, targetWord) {
 function initializeGame(wordData) {
     const lastPlayed = localStorage.getItem('LastPlayed');
     const today = getTodayDateString();
-    findAndDisplayPath(wordData);
-    // if (lastPlayed === today) {
-    //     // If the game was already played today, load from localStorage
-    //     const startingWord = localStorage.getItem('startingWord');
-    //     const targetWord = localStorage.getItem('targetWord');
-    //     const guesses = JSON.parse(localStorage.getItem('guesses')) || [startingWord];
-
-    //     displayChain(wordData, guesses, targetWord); // Display the chain
-
-    //     // Check if the game was won
-    //     if (guesses[guesses.length - 1] === targetWord) {
-    //         endGame(wordData);
-    //     } else {
-    //         calculateMinMoves(wordData, startingWord, targetWord);
-    //     }
-    // } else {
-    //     // If the game hasn't been played today, run findAndDisplayPath
+    if (lastPlayed === today) {
+        // If the game was already played today, load from localStorage
+        const startingWord = localStorage.getItem('startingWord');
+        const targetWord = localStorage.getItem('targetWord');
+        const guesses = JSON.parse(localStorage.getItem('guesses')) || [startingWord];
         
-    // }
+        displayChain(wordData, guesses, targetWord); // Display the chain
+        
+        // Check if the game was won
+        if (guesses[guesses.length - 1] === targetWord) {
+            endGame(wordData);
+        } else {
+            calculateMinMoves(wordData, startingWord, targetWord);
+        }
+    } else {
+        // If the game hasn't been played today, run findAndDisplayPath
+        findAndDisplayPath(wordData);
+        
+    }
 }
 
 
@@ -436,7 +436,20 @@ function showWinModal(playerScore, minMoves) {
     };
 
     // Display the modal
-    modal.style.display = 'block';
+    modal.style.display = 'flex';
+}
+
+function showHelpModal() {
+    const modal = document.getElementById('helpModal');
+    const closeModalButton = document.getElementById('closeHelpModalButton');
+
+    // Close button functionality
+    closeModalButton.onclick = function() {
+        modal.style.display = 'none';
+    };
+
+    // Display the modal
+    modal.style.display = 'flex';
 }
 
 function addShareResultsButton() {
@@ -448,7 +461,7 @@ function addShareResultsButton() {
     shareButton.textContent = 'Share your results';
     shareButton.onclick = function() {
         const modal = document.getElementById('winModal');
-        modal.style.display = 'block'; // Open the win modal when the button is clicked
+        modal.style.display = 'flex'; // Open the win modal when the button is clicked
     };
 
     container.appendChild(shareButton);
@@ -456,9 +469,11 @@ function addShareResultsButton() {
 
 // Close the modal if the user clicks anywhere outside of it
 window.onclick = function(event) {
-    const modal = document.getElementById('winModal');
-    if (event.target === modal) {
-        modal.style.display = 'none';
+    const winModal = document.getElementById('winModal');
+    const helpModal = document.getElementById('helpModal')
+    if (event.target === winModal || event.target === helpModal) {
+        winModal.style.display = 'none';
+        helpModal.style.display = 'none';
     }
 };
 

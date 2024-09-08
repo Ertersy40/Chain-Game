@@ -21,6 +21,7 @@
 <body>
     <div id="gameAndAds">
         <div id="gameArea">
+            <div id="helpButton" onclick="showHelpModal()">?</div>
             <h1>WordChains.xyz</h1>
             
             <div id="chainDisplay">
@@ -71,6 +72,56 @@
             <p id="scoreMessage"></p>
             <button id="shareButton">Share</button>
             <button id="closeModalButton">Close</button>
+        </div>
+    </div>
+
+    <div id="helpModal" class="modal">
+        <div class="modal-content">
+            <h2>Welcome to Word Chains!</h2>
+            <p>Your goal is to get from to the Target word:</p>
+            <div class="word">
+                <div class="letter" style="background-color: var(--tile-color) !important; color: black; border: 4px solid var(--green)">k</div>
+                <div class="letter" style="background-color: var(--tile-color) !important; color: black; border: 4px solid var(--green)">n</div>
+                <div class="letter" style="background-color: var(--tile-color) !important; color: black; border: 4px solid var(--green)">o</div>
+                <div class="letter" style="background-color: var(--tile-color) !important; color: black; border: 4px solid var(--green)">w</div>
+            </div>
+            <p>From the starting word:</p>
+            <div class="word">
+                <div class="letter" style="background-color: rgb(199, 118, 52);">h</div>
+                <div class="letter" style="background-color: rgb(199, 118, 52);">e</div>
+                <div class="letter" style="background-color: rgb(199, 118, 52);">l</div>
+                <div class="letter" style="background-color: rgb(199, 118, 52);">p</div>
+            </div>
+            <p>By changing one letter at a time</p>
+            <div class="word">
+                <div class="letter" style="background-color: rgb(196, 116, 81);">h</div>
+                <div class="letter" style="background-color: rgb(196, 116, 81);">e</div>
+                <div class="letter" style="background-color: rgb(196, 116, 81);">l</div>
+                <div class="letter" style="background-color: rgb(196, 116, 81); border: 4px solid black;">d</div>
+            </div>
+            <p>But every letter you change has to make a real word!</p>
+            <div class="word">
+                <div class="letter" style="background-color: rgb(226, 66, 66);">j</div>
+                <div class="letter" style="background-color: rgb(196, 116, 81);">e</div>
+                <div class="letter" style="background-color: rgb(196, 116, 81);">l</div>
+                <div class="letter" style="background-color: rgb(196, 116, 81);">d</div>
+            </div>
+            <p>The color of the words relates to how close you are to the target so move towards green!</p>
+            <div class="color-display">
+                <div class="letter" style="background-color: rgb(130, 17, 7);">10+</div>
+                <div class="letter" style="background-color: rgb(219, 24, 24);">9</div>
+                <div class="letter" style="background-color: rgb(212, 59, 59);">8</div>
+                <div class="letter" style="background-color: rgb(196, 85, 81);">7</div>
+                <div class="letter" style="background-color: rgb(196, 116, 81);">6</div>
+                <div class="letter" style="background-color: rgb(199, 118, 52);">5</div>
+                <div class="letter" style="background-color: rgb(196, 154, 81);">4</div>
+                <div class="letter" style="background-color: rgb(196, 177, 81);">3</div>
+                <div class="letter" style="background-color: rgb(185, 196, 81);">2</div>
+                <div class="letter" style="background-color: rgb(137, 176, 92);">1</div>
+            </div>
+            
+            <p>Try to get to the target in less than 5 attempts</p>
+            <button id="closeHelpModalButton">Start!</button>
         </div>
     </div>
 
