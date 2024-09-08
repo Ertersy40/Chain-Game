@@ -311,3 +311,9 @@ button {
 .key:active {
     background-color: var(--tile-color);
 }
+
+
+
+#customKeyboard.finished{
+    display: none;
+}

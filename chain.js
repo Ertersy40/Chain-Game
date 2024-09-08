@@ -12,7 +12,7 @@ function getTodayDateString() {
 }
 
 function seededRandom(seed) {
-    console.log(seed)
+    // console.log(seed)
     var x = Math.sin(seed) * 10000;
     return x - Math.floor(x);
 }
@@ -106,7 +106,7 @@ function calculateMinMoves(words, startingWord, targetWord) {
         let [currentWord, depth, path] = queue.shift();
 
         if (currentWord === startingWord) {
-            console.log('Ideal path:', path.reverse().join(' -> ')); // Log the ideal path
+            // console.log('Ideal path:', path.reverse().join(' -> ')); // Log the ideal path
             return depth; // Return the minimum depth when starting word is found
         }
 
@@ -126,20 +126,25 @@ function initializeGame(wordData) {
     const today = getTodayDateString();
 
     if (lastPlayed === today) {
-        console.log("PLAYED TODAY")
         // If the game was already played today, load from localStorage
         const startingWord = localStorage.getItem('startingWord');
         const targetWord = localStorage.getItem('targetWord');
         const guesses = JSON.parse(localStorage.getItem('guesses')) || [startingWord];
 
         displayChain(guesses, targetWord); // Display the chain
-        const minMoves = calculateMinMoves(wordData, startingWord, targetWord);
+
+        // Check if the game was won
+        if (guesses[guesses.length - 1] === targetWord) {
+            endGame(wordData);
+        } else {
+            calculateMinMoves(wordData, startingWord, targetWord);
+        }
     } else {
-        console.log("NEW GAME")
         // If the game hasn't been played today, run findAndDisplayPath
         findAndDisplayPath(wordData);
     }
 }
+
 
 function saveGuesses(path) {
     localStorage.setItem('guesses', JSON.stringify(path));
@@ -254,7 +259,7 @@ function selectLetter(letterDiv, wordDivContainer) {
     // Add 'selected' class to the clicked letter
     letterDiv.classList.add('selected');
 
-    console.log("adding input event listener to letterdiv", letterDiv)
+    // console.log("adding input event listener to letterdiv", letterDiv)
     document.addEventListener('keydown', handleLetterChange);
 }
 
@@ -269,10 +274,10 @@ document.getElementById('customKeyboard').addEventListener('click', function(eve
 
 
 function handleLetterChange(event) {
-    console.log("LETTER CHANGEEE")
+    // console.log("LETTER CHANGEEE")
     const selectedLetter = document.querySelector('.letter.selected');
     if (!selectedLetter) {
-        console.log('no selected letter?')
+        // console.log('no selected letter?')
         return
     };
     let newLetter;
@@ -281,8 +286,6 @@ function handleLetterChange(event) {
     } else {
         newLetter = event;
     }
-
-    // event.target.value = '';  // Clear the input field for the next entry
 
     if (newLetter.length === 1 && /[a-z]/.test(newLetter)) {
         const wordDivContainer = selectedLetter.closest('.word');
@@ -296,7 +299,7 @@ function handleLetterChange(event) {
         // Check if the new word is valid
         loadWordData('word_differences.json', (wordData) => {
             const guesses = loadGuesses();
-            console.log('guesses:', guesses)
+            // console.log('guesses:', guesses)
             const currentWord = guesses[guesses.length - 1];
             if (wordData[newWord] && isOneLetterDifferent(currentWord, newWord)) {
                 submitGuess(wordData, newWord); // Submit the guess if valid
@@ -344,7 +347,7 @@ function submitGuess(wordData, userGuess = null) {
             endGame(wordData);
         }
     } else {
-        console.log(currentWord);
+        // console.log(currentWord);
     }
 }
 
@@ -365,8 +368,15 @@ function endGame(wordData) {
     const playerScore = guesses.length - 1;
     showWinModal(playerScore, minMoves);
 
+    addFinishClass('customKeyboard')
+    addFinishClass('chainDisplay')
+
     // Add "Share your results" button to the bottom of the page
     addShareResultsButton();
+}
+
+function addFinishClass(name) {
+    document.getElementById(name).classList.add('finished')
 }
 
 function showWinModal(playerScore, minMoves) {
@@ -428,3 +438,4 @@ window.onclick = function(event) {
 document.addEventListener("DOMContentLoaded", () => {
     loadWordData('word_differences.json', initializeGame);
 });
+
