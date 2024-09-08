@@ -313,8 +313,12 @@ button {
     background-color: var(--tile-color);
 }
 
-
-
 #customKeyboard.finished{
     display: none;
+}
+
+.word:last-child:not(.current) .letter{
+    background-color: var(--tile-color) !important;
+    color: black;
+    border: 4px solid var(--green);
 }
