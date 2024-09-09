@@ -347,7 +347,8 @@ button {
 .color-display {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    row-gap: 10px;
+    row-gap: 5px;
+    column-gap: 5px;
 }
 
 #helpModal .modal-content .word .letter, .color-display .letter {
@@ -359,7 +360,8 @@ button {
 #helpModal .modal-content{
     margin-inline: 30px;
     max-height: min(700px, 80%);
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -368,4 +370,12 @@ button {
 #helpModal .modal-content p {
     font-weight: 600;
     max-width: 400px;
+}
+
+.modal .modal-content hr {
+    margin: calc(5px* 2);
+    border: 1px solid rgb(179, 178, 178);
+    opacity: 1;
+    border-width: 1px 0 0;
+    width: 100%;
 }
