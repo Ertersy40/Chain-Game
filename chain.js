@@ -361,16 +361,16 @@ function submitGuess(wordData, userGuess = null) {
 function getColorBasedOnMoves(moves) {
     const colorMapping = {
         0: 'rgb(111, 176, 92)',    // Green
-        1: 'rgb(137, 176, 92)',
-        2: 'rgb(185, 196, 81)',
-        3: 'rgb(196, 177, 81)',
-        4: 'rgb(196, 154, 81)',
-        5: 'rgb(199, 118, 52)',    // Red
-        6: 'rgb(196, 116, 81)',
-        7: 'rgb(196, 85, 81)',
-        8: 'rgb(212, 59, 59)',
-        9: 'rgb(219, 24, 24)',
-        10: 'rgb(130, 17, 7)' // Deep Red
+        1: 'rgb(176, 207, 89)',
+        2: 'rgb(203, 216, 79)',
+        3: 'rgb(234, 172, 13)',
+        4: 'rgb(212, 151, 45)',
+        5: 'rgb(228, 126, 43)',    // Red
+        6: 'rgb(237, 93, 30)',
+        7: 'rgb(223, 73, 26)',
+        8: 'rgb(232, 26, 26)',
+        9: 'rgb(172, 9, 9)',
+        10: 'rgb(103, 13, 5)' // Deep Red
     };
     
     const clampedMoves = Math.min(moves, 10); // Clamp moves to a maximum of 10
