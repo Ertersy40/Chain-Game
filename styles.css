@@ -12,6 +12,29 @@ html, body {
     --border: #ececec;
     --tile-color: #ececec;
     --tile-selected: rgb(190, 190, 190);
+
+
+    --color-0: #6FB05C;    /* Green */
+    --color-1: #ABD258;
+    --color-2: #CBD84F;
+    --color-3: #ECD507;
+    --color-4: #F4B000;
+    --color-5: #F0740E;    /* Red */
+    --color-6: #F04914;
+    --color-7: #CA0404;
+    --color-8: #A11111;
+    --color-9: #670D05;    /* Deep Red */
+
+    --shadow-0: #447137;   /* Green */
+    --shadow-1: #638123;
+    --shadow-2: #879220;
+    --shadow-3: #A49405;
+    --shadow-4: #A77802;
+    --shadow-5: #A9510A;   /* Red */
+    --shadow-6: #AD320B;
+    --shadow-7: #7D0303;
+    --shadow-8: #5C0A0A;
+    --shadow-9: #3F0803;   /* Deep Red */
 }
 
 h1{
@@ -360,6 +383,7 @@ button {
 }
 
 #helpModal .modal-content{
+    padding-inline: 50px;
     margin-inline: 30px;
     max-height: min(700px, 80%);
     overflow-y: auto;
@@ -382,6 +406,19 @@ button {
     width: 100%;
 }
 
+.modal .modal-content .letter{
+    font-size: 1.3rem !important;
+}
+
+.modal .modal-content .word{
+    width: 100%;
+    max-width: 250px;
+}
+
+.bottomLinks a{
+    font-size: 0.8rem;
+    color: black;
+}
 /* .letter.changed {
     margin-top: -2em;
     padding-top: 2em;

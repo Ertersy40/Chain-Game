@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact.css">
+    <title>Contact the WordChains.xyz Team</title>
+</head>
+<body>
+    <a href="/" class="backButton">&lt;</a>
+    <div class="form-container">
+        <div class="titles">
+            <h1>Contact the <span class="title">WordChains.xyz</span> Team</h1>
+        </div>
+        <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+            <input type="hidden" name="access_key" value="a5a3e78a-61f8-4588-b84f-d578f4610549" />
+            <input type="hidden" name="subject" value="New Website Enquiry" />
+            <input type="checkbox" name="botcheck" style="display: none;" />
+            <div class="card">
+              <div class="form-group">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" name="name" id="name" required class="form-input" />
+              </div>
+              <div class="form-group">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input type="email" name="email" id="email" required class="form-input" />
+              </div>
+              <div class="form-group">
+                  <label for="math-answer" class="form-label"><span id="math-question-text"></span></label>
+                  <input type="text" name="math-answer" id="math-answer" required class="form-input" />
+              </div>            
+              <div class="form-group message-form">
+                  <label for="message" class="form-label">Your Message</label>
+                  <textarea rows="1" name="message" id="message" class="form-input" required></textarea>
+              </div>
+            </div>
+            <p id="submission-result"></p>
+            
+            <div class="form-group">
+                <button type="submit" class="submit-button">Send Message</button>
+            </div>
+        </form>
+    </div>
+    <script src="contact.js"></script>
+</body>
+</html>

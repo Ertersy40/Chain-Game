@@ -405,30 +405,31 @@ function submitGuess(wordData, userGuess = null) {
 
 function getColorBasedOnMoves(moves) {
     const colorMapping = {
-        0: '#6FB05C',    // Green
-        1: '#ABD258',
-        2: '#CBD84F',
-        3: '#ECD507',
-        4: '#F4B000',
-        5: '#F0740E',    // Red
-        6: '#F04914',
-        7: '#CA0404',
-        8: '#A11111',
-        9: '#670D05',    // Deep Red
+        0: 'var(--color-0)',    // Green
+        1: 'var(--color-1)',
+        2: 'var(--color-2)',
+        3: 'var(--color-3)',
+        4: 'var(--color-4)',
+        5: 'var(--color-5)',    // Red
+        6: 'var(--color-6)',
+        7: 'var(--color-7)',
+        8: 'var(--color-8)',
+        9: 'var(--color-9)',    // Deep Red
     };
-
+    
     const shadowMapping = {
-        0: '#447137',    // Green
-        1: '#638123',
-        2: '#879220',
-        3: '#A49405',
-        4: '#A77802',
-        5: '#A9510A',    // Red
-        6: '#AD320B',
-        7: '#7D0303',
-        8: '#5C0A0A',
-        9: '#3F0803',    // Deep Red
-    }
+        0: 'var(--shadow-0)',    // Green
+        1: 'var(--shadow-1)',
+        2: 'var(--shadow-2)',
+        3: 'var(--shadow-3)',
+        4: 'var(--shadow-4)',
+        5: 'var(--shadow-5)',    // Red
+        6: 'var(--shadow-6)',
+        7: 'var(--shadow-7)',
+        8: 'var(--shadow-8)',
+        9: 'var(--shadow-9)',    // Deep Red
+    };
+    
     
     const clampedMoves = Math.min(moves, 9); // Clamp moves to a maximum of 9
     return {color: colorMapping[clampedMoves], shadow: shadowMapping[clampedMoves]};
