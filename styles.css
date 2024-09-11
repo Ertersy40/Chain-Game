@@ -83,7 +83,9 @@ h1{
 .word.current .letter {
     transition: all 0.2s ease-in-out;
     
-    box-shadow: 5px 5px 0px 0px rgb(143, 143, 143);
+    box-shadow: rgb(143, 143, 143) 5px 5px 0px 0px,
+    rgb(143, 143, 143) 2.5px 2.5px 0px 0px
+    rgb(143, 143, 143) 1px 1px 0px 0px ;
     background-color: var(--tile-color);
 }
 

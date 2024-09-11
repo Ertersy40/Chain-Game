@@ -243,7 +243,7 @@ function displayWord(wordData, word, targetWord, isCurrentWord = false, previous
         
         if (isCurrentWord) {
             letterDiv.addEventListener('click', () => selectLetter(letterDiv, wordDivContainer));
-            letterDiv.style.boxShadow = `5px 5px 0px 0px ${shadow}`
+            letterDiv.style.boxShadow = `${shadow} 5px 5px 0px 0px, ${shadow} 3px 3px 0px 0px, ${shadow} 1px 1px 0px 0px `
         }
 
         wordDivContainer.appendChild(letterDiv);
