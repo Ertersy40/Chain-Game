@@ -160,8 +160,9 @@ function displayChain(wordData, guesses, targetWord) {
     chainDiv.innerHTML = ''; // Clear previous content
 
     // Display each word in the guesses list
-    guesses.slice(0, guesses.length - 1).forEach(guess => {
-        const guessDivContainer = displayWord(wordData, guess, targetWord);
+    guesses.slice(0, guesses.length - 1).forEach((guess, guessIndex) => {
+        const previousWord = guesses[guessIndex - 1] || ''; // Get the previous word, or empty string if none
+        const guessDivContainer = displayWord(wordData, guess, targetWord, false, previousWord);
         chainDiv.appendChild(guessDivContainer);
     });
 
@@ -208,8 +209,7 @@ function displayChain(wordData, guesses, targetWord) {
     });
 }
 
-
-function displayWord(wordData, word, targetWord, isCurrentWord = false) {
+function displayWord(wordData, word, targetWord, isCurrentWord = false, previousWord = '') {
     const wordDivContainer = document.createElement('div');
     wordDivContainer.className = 'word';
     if (isCurrentWord) {
@@ -230,7 +230,14 @@ function displayWord(wordData, word, targetWord, isCurrentWord = false) {
             letterDiv.classList.add('correct');
         }
 
-        letterDiv.style.backgroundColor = color; // Apply the color based on moves
+        // Apply the color based on moves
+        letterDiv.style.backgroundColor = color;
+
+        // Add the "changed" class if the letter differs from the previous word
+        console.log(previousWord, index, letter)
+        if (previousWord && previousWord[index] && previousWord[index] !== letter) {
+            letterDiv.classList.add('changed');
+        }
 
         if (isCurrentWord) {
             letterDiv.addEventListener('click', () => selectLetter(letterDiv, wordDivContainer));
@@ -241,6 +248,41 @@ function displayWord(wordData, word, targetWord, isCurrentWord = false) {
 
     return wordDivContainer;
 }
+
+
+
+// function displayWord(wordData, word, targetWord, isCurrentWord = false) {
+//     const wordDivContainer = document.createElement('div');
+//     wordDivContainer.className = 'word';
+//     if (isCurrentWord) {
+//         wordDivContainer.classList.add('current');
+//     }
+
+//     const moves = calculateMinMoves(wordData, word, targetWord); // Calculate moves from current word to target word
+//     const color = getColorBasedOnMoves(moves); // Get the color based on moves
+
+//     word.split('').forEach((letter, index) => {
+//         const letterDiv = document.createElement('div');
+//         letterDiv.className = 'letter';
+//         letterDiv.textContent = letter;
+//         letterDiv.dataset.index = index;
+
+//         // Add green class if the letter is correct and in the correct position
+//         if (targetWord[index] === letter) {
+//             letterDiv.classList.add('correct');
+//         }
+
+//         letterDiv.style.backgroundColor = color; // Apply the color based on moves
+
+//         if (isCurrentWord) {
+//             letterDiv.addEventListener('click', () => selectLetter(letterDiv, wordDivContainer));
+//         }
+
+//         wordDivContainer.appendChild(letterDiv);
+//     });
+
+//     return wordDivContainer;
+// }
 
 
 // Add event listener for clicks outside the word.current
@@ -360,20 +402,19 @@ function submitGuess(wordData, userGuess = null) {
 
 function getColorBasedOnMoves(moves) {
     const colorMapping = {
-        0: 'rgb(111, 176, 92)',    // Green
-        1: 'rgb(176, 207, 89)',
-        2: 'rgb(203, 216, 79)',
-        3: 'rgb(234, 172, 13)',
-        4: 'rgb(212, 151, 45)',
-        5: 'rgb(228, 126, 43)',    // Red
-        6: 'rgb(237, 93, 30)',
-        7: 'rgb(223, 73, 26)',
-        8: 'rgb(232, 26, 26)',
-        9: 'rgb(172, 9, 9)',
-        10: 'rgb(103, 13, 5)' // Deep Red
+        0: '6FB05C',    // Green
+        1: 'ABD258',
+        2: 'CBD84F',
+        3: 'ECD507',
+        4: 'F4B000',
+        5: 'F0740E',    // Red
+        6: 'F04914',
+        7: 'CA0404',
+        8: 'A11111',
+        9: '670D05',
     };
     
-    const clampedMoves = Math.min(moves, 10); // Clamp moves to a maximum of 10
+    const clampedMoves = Math.min(moves, 9); // Clamp moves to a maximum of 10
     return colorMapping[clampedMoves];
 }
 
