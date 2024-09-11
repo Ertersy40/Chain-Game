@@ -217,7 +217,9 @@ function displayWord(wordData, word, targetWord, isCurrentWord = false, previous
     }
 
     const moves = calculateMinMoves(wordData, word, targetWord); // Calculate moves from current word to target word
-    const color = getColorBasedOnMoves(moves); // Get the color based on moves
+    const colors = getColorBasedOnMoves(moves); // Get the color based on moves
+    const color = colors.color
+    const shadow = colors.shadow
 
     word.split('').forEach((letter, index) => {
         const letterDiv = document.createElement('div');
@@ -232,15 +234,16 @@ function displayWord(wordData, word, targetWord, isCurrentWord = false, previous
 
         // Apply the color based on moves
         letterDiv.style.backgroundColor = color;
-
+        
         // Add the "changed" class if the letter differs from the previous word
         console.log(previousWord, index, letter)
         if (previousWord && previousWord[index] && previousWord[index] !== letter) {
             letterDiv.classList.add('changed');
         }
-
+        
         if (isCurrentWord) {
             letterDiv.addEventListener('click', () => selectLetter(letterDiv, wordDivContainer));
+            letterDiv.style.boxShadow = `5px 5px 0px 0px ${shadow}`
         }
 
         wordDivContainer.appendChild(letterDiv);
@@ -411,11 +414,24 @@ function getColorBasedOnMoves(moves) {
         6: '#F04914',
         7: '#CA0404',
         8: '#A11111',
-        9: '#670D05',
+        9: '#670D05',    // Deep Red
     };
+
+    const shadowMapping = {
+        0: '#447137',    // Green
+        1: '#638123',
+        2: '#879220',
+        3: '#A49405',
+        4: '#A77802',
+        5: '#A9510A',    // Red
+        6: '#AD320B',
+        7: '#7D0303',
+        8: '#5C0A0A',
+        9: '#3F0803',    // Deep Red
+    }
     
-    const clampedMoves = Math.min(moves, 9); // Clamp moves to a maximum of 10
-    return colorMapping[clampedMoves];
+    const clampedMoves = Math.min(moves, 9); // Clamp moves to a maximum of 9
+    return {color: colorMapping[clampedMoves], shadow: shadowMapping[clampedMoves]};
 }
 
 
