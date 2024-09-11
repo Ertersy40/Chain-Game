@@ -402,16 +402,16 @@ function submitGuess(wordData, userGuess = null) {
 
 function getColorBasedOnMoves(moves) {
     const colorMapping = {
-        0: '6FB05C',    // Green
-        1: 'ABD258',
-        2: 'CBD84F',
-        3: 'ECD507',
-        4: 'F4B000',
-        5: 'F0740E',    // Red
-        6: 'F04914',
-        7: 'CA0404',
-        8: 'A11111',
-        9: '670D05',
+        0: '#6FB05C',    // Green
+        1: '#ABD258',
+        2: '#CBD84F',
+        3: '#ECD507',
+        4: '#F4B000',
+        5: '#F0740E',    // Red
+        6: '#F04914',
+        7: '#CA0404',
+        8: '#A11111',
+        9: '#670D05',
     };
     
     const clampedMoves = Math.min(moves, 9); // Clamp moves to a maximum of 10
