@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Chakra Petch';
+    src: url('ChakraPetch-Bold.woff2') format('woff2'),
+        url('ChakraPetch-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 html, body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -38,6 +48,7 @@ html, body {
 }
 
 h1{
+    font-family: 'Chakra Petch';
     margin-top: 50px;
 }
 
