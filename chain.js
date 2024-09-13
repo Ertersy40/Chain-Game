@@ -253,41 +253,6 @@ function displayWord(wordData, word, targetWord, isCurrentWord = false, previous
 }
 
 
-
-// function displayWord(wordData, word, targetWord, isCurrentWord = false) {
-//     const wordDivContainer = document.createElement('div');
-//     wordDivContainer.className = 'word';
-//     if (isCurrentWord) {
-//         wordDivContainer.classList.add('current');
-//     }
-
-//     const moves = calculateMinMoves(wordData, word, targetWord); // Calculate moves from current word to target word
-//     const color = getColorBasedOnMoves(moves); // Get the color based on moves
-
-//     word.split('').forEach((letter, index) => {
-//         const letterDiv = document.createElement('div');
-//         letterDiv.className = 'letter';
-//         letterDiv.textContent = letter;
-//         letterDiv.dataset.index = index;
-
-//         // Add green class if the letter is correct and in the correct position
-//         if (targetWord[index] === letter) {
-//             letterDiv.classList.add('correct');
-//         }
-
-//         letterDiv.style.backgroundColor = color; // Apply the color based on moves
-
-//         if (isCurrentWord) {
-//             letterDiv.addEventListener('click', () => selectLetter(letterDiv, wordDivContainer));
-//         }
-
-//         wordDivContainer.appendChild(letterDiv);
-//     });
-
-//     return wordDivContainer;
-// }
-
-
 // Add event listener for clicks outside the word.current
 document.addEventListener('click', function(event) {
     const currentWordElement = document.querySelector('.word.current');
@@ -328,9 +293,25 @@ function handleLetterChange(event) {
     // console.log("LETTER CHANGEEE")
     const selectedLetter = document.querySelector('.letter.selected');
     if (!selectedLetter) {
-        // console.log('no selected letter?')
-        return
-    };
+        // No letter is selected, add "hint" class to all letters in the current word with a delay
+        const currentWordContainer = document.querySelector('.word.current');
+        if (currentWordContainer) {
+            const letters = currentWordContainer.querySelectorAll('.letter');
+            letters.forEach((letter, index) => {
+                setTimeout(() => {
+                    letter.classList.add('hint');
+                    
+                    // Remove the "hint" class after a short delay
+                    setTimeout(() => {
+                        letter.classList.remove('hint');
+                    }, 200); // Adjust the duration as needed
+    
+                }, index * 100); // 0.1s (100ms) delay between each letter
+            });
+        }
+        return;
+    }
+    
     let newLetter;
     if (event.key){
         newLetter = event.key.toLowerCase();
