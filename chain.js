@@ -236,7 +236,7 @@ function displayWord(wordData, word, targetWord, isCurrentWord = false, previous
         letterDiv.style.backgroundColor = color;
         
         // Add the "changed" class if the letter differs from the previous word
-        console.log(previousWord, index, letter)
+        // console.log(previousWord, index, letter)
         if (previousWord && previousWord[index] && previousWord[index] !== letter) {
             letterDiv.classList.add('changed');
         }
@@ -287,7 +287,7 @@ document.getElementById('customKeyboard').addEventListener('click', function(eve
 
 
 function handleLetterChange(event) {
-    console.log("first")
+    // console.log("first")
     // console.log("LETTER CHANGEEE")
     const selectedLetter = document.querySelector('.letter.selected');
     if (!selectedLetter) {
