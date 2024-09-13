@@ -274,9 +274,6 @@ function selectLetter(letterDiv, wordDivContainer) {
     
     // Add 'selected' class to the clicked letter
     letterDiv.classList.add('selected');
-
-    // console.log("adding input event listener to letterdiv", letterDiv)
-    document.addEventListener('keydown', handleLetterChange);
 }
 
 document.getElementById('customKeyboard').addEventListener('click', function(event) {
@@ -290,6 +287,7 @@ document.getElementById('customKeyboard').addEventListener('click', function(eve
 
 
 function handleLetterChange(event) {
+    console.log("first")
     // console.log("LETTER CHANGEEE")
     const selectedLetter = document.querySelector('.letter.selected');
     if (!selectedLetter) {
@@ -517,6 +515,7 @@ window.onclick = function(event) {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener('keydown', handleLetterChange);
     loadWordData('word_differences.json', initializeGame);
 });
 
