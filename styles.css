@@ -224,6 +224,20 @@ button, input {
     margin-top: 0.5rem;
 }
 
+#idealPathContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.idealWord {
+    width:  60px;
+    padding: 0.5em 0.5em;
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    margin-block: 5px;
+}
+
 button {
     border-radius: 0.5rem;
     padding: 10px 20px;
