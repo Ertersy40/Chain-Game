@@ -1,12 +1,6 @@
 {
-    "abet": [],
     "able": [
-        "ably",
         "axle"
-    ],
-    "ably": [
-        "able",
-        "ally"
     ],
     "aced": [
         "aces",
@@ -23,10 +17,8 @@
         "ages",
         "ales",
         "apes",
-        "ares",
         "awes",
         "axes",
-        "ayes",
         "ices"
     ],
     "ache": [
@@ -75,12 +67,9 @@
         "aged",
         "ales",
         "apes",
-        "ares",
         "awes",
-        "axes",
-        "ayes"
+        "axes"
     ],
-    "ahoy": [],
     "aide": [
         "aids",
         "bide",
@@ -111,10 +100,8 @@
         "aids",
         "ails",
         "airs",
-        "alms",
         "arms",
         "dims",
-        "hims",
         "rims"
     ],
     "airs": [
@@ -122,7 +109,6 @@
         "ails",
         "aims",
         "airy",
-        "firs",
         "sirs"
     ],
     "airy": [
@@ -137,31 +123,17 @@
         "skin"
     ],
     "alas": [
-        "ales",
-        "alms"
+        "ales"
     ],
     "ales": [
         "aces",
         "ages",
         "alas",
-        "alms",
         "apes",
-        "ares",
         "awes",
-        "axes",
-        "ayes"
+        "axes"
     ],
-    "alga": [],
-    "ally": [
-        "ably"
-    ],
-    "alms": [
-        "aims",
-        "alas",
-        "ales",
-        "arms",
-        "elms"
-    ],
+    "ally": [],
     "also": [
         "alto"
     ],
@@ -182,23 +154,13 @@
     "amps": [
         "imps"
     ],
-    "anal": [],
     "anew": [
         "knew"
     ],
     "anon": [],
-    "ante": [
-        "ants"
-    ],
     "ants": [
         "acts",
-        "ante",
-        "anus",
         "arts"
-    ],
-    "anus": [
-        "ants",
-        "onus"
     ],
     "aped": [
         "aced",
@@ -215,10 +177,8 @@
         "ales",
         "aped",
         "apex",
-        "ares",
         "awes",
-        "axes",
-        "ayes"
+        "axes"
     ],
     "apex": [
         "aped",
@@ -229,54 +189,26 @@
     ],
     "arcs": [
         "arch",
-        "ares",
         "arks",
         "arms",
         "arts"
     ],
-    "area": [
-        "ares",
-        "aria"
-    ],
-    "ares": [
-        "aces",
-        "ages",
-        "ales",
-        "apes",
-        "arcs",
-        "area",
-        "arks",
-        "arms",
-        "arts",
-        "awes",
-        "axes",
-        "ayes",
-        "ores"
-    ],
-    "aria": [
-        "area",
-        "arid"
-    ],
+    "area": [],
     "arid": [
         "acid",
         "amid",
-        "aria",
         "avid",
         "grid"
     ],
     "arks": [
         "arcs",
-        "ares",
         "arms",
         "arts",
-        "asks",
-        "irks"
+        "asks"
     ],
     "arms": [
         "aims",
-        "alms",
         "arcs",
-        "ares",
         "arks",
         "army",
         "arts"
@@ -288,7 +220,6 @@
         "acts",
         "ants",
         "arcs",
-        "ares",
         "arks",
         "arms"
     ],
@@ -310,7 +241,6 @@
         "amid",
         "arid"
     ],
-    "avow": [],
     "away": [
         "awry",
         "sway"
@@ -328,10 +258,8 @@
         "ages",
         "ales",
         "apes",
-        "ares",
         "awed",
         "axes",
-        "ayes",
         "ewes",
         "owes"
     ],
@@ -351,11 +279,9 @@
         "ages",
         "ales",
         "apes",
-        "ares",
         "awes",
         "axed",
         "axis",
-        "ayes",
         "exes"
     ],
     "axis": [
@@ -363,29 +289,6 @@
     ],
     "axle": [
         "able"
-    ],
-    "ayes": [
-        "aces",
-        "ages",
-        "ales",
-        "apes",
-        "ares",
-        "awes",
-        "axes",
-        "byes",
-        "dyes",
-        "eyes"
-    ],
-    "baas": [
-        "bags",
-        "bans",
-        "bars",
-        "bass",
-        "bats",
-        "bays",
-        "bias",
-        "boas",
-        "bras"
     ],
     "babe": [
         "baby",
@@ -430,18 +333,14 @@
         "wade"
     ],
     "bags": [
-        "baas",
         "bans",
         "bars",
         "bass",
         "bats",
         "bays",
         "begs",
-        "bogs",
         "bugs",
-        "fags",
         "gags",
-        "hags",
         "lags",
         "nags",
         "rags",
@@ -494,7 +393,6 @@
         "balm",
         "band",
         "bard",
-        "baud",
         "bold"
     ],
     "bale": [
@@ -544,11 +442,9 @@
         "bald",
         "bane",
         "bang",
-        "bani",
         "bank",
         "bans",
         "bard",
-        "baud",
         "bend",
         "bind",
         "bond",
@@ -564,7 +460,6 @@
         "bale",
         "band",
         "bang",
-        "bani",
         "bank",
         "bans",
         "bare",
@@ -582,7 +477,6 @@
     "bang": [
         "band",
         "bane",
-        "bani",
         "bank",
         "bans",
         "bung",
@@ -594,19 +488,11 @@
         "sang",
         "tang"
     ],
-    "bani": [
-        "band",
-        "bane",
-        "bang",
-        "bank",
-        "bans"
-    ],
     "bank": [
         "back",
         "band",
         "bane",
         "bang",
-        "bani",
         "bans",
         "bark",
         "bask",
@@ -618,12 +504,10 @@
         "yank"
     ],
     "bans": [
-        "baas",
         "bags",
         "band",
         "bane",
         "bang",
-        "bani",
         "bank",
         "bars",
         "bass",
@@ -644,8 +528,7 @@
         "barf",
         "bark",
         "barn",
-        "bars",
-        "garb"
+        "bars"
     ],
     "bard": [
         "bald",
@@ -656,7 +539,6 @@
         "bark",
         "barn",
         "bars",
-        "baud",
         "bird",
         "card",
         "hard",
@@ -706,8 +588,6 @@
         "bars",
         "bask",
         "dark",
-        "hark",
-        "lark",
         "mark",
         "park"
     ],
@@ -726,7 +606,6 @@
         "yarn"
     ],
     "bars": [
-        "baas",
         "bags",
         "bans",
         "barb",
@@ -785,12 +664,10 @@
         "base",
         "bash",
         "bass",
-        "cask",
         "mask",
         "task"
     ],
     "bass": [
-        "baas",
         "bags",
         "bans",
         "bars",
@@ -830,12 +707,10 @@
         "bate",
         "bats",
         "both",
-        "lath",
         "oath",
         "path"
     ],
     "bats": [
-        "baas",
         "bags",
         "bans",
         "bars",
@@ -856,19 +731,12 @@
         "rats",
         "vats"
     ],
-    "baud": [
-        "bald",
-        "band",
-        "bard",
-        "laud"
-    ],
     "bawl": [
         "bail",
         "ball",
         "bowl"
     ],
     "bays": [
-        "baas",
         "bags",
         "bans",
         "bars",
@@ -877,10 +745,7 @@
         "boys",
         "buys",
         "days",
-        "gays",
-        "hays",
         "jays",
-        "lays",
         "nays",
         "pays",
         "rays",
@@ -1022,7 +887,6 @@
         "bees",
         "beet",
         "deer",
-        "jeer",
         "leer",
         "peer",
         "seer",
@@ -1040,7 +904,6 @@
         "bets",
         "byes",
         "fees",
-        "gees",
         "pees",
         "sees",
         "tees",
@@ -1064,7 +927,6 @@
         "beds",
         "bees",
         "bets",
-        "bogs",
         "bugs",
         "kegs",
         "legs",
@@ -1078,7 +940,6 @@
         "cell",
         "fell",
         "hell",
-        "jell",
         "sell",
         "tell",
         "well",
@@ -1163,12 +1024,10 @@
         "wets"
     ],
     "bias": [
-        "baas",
         "bibs",
         "bids",
         "bins",
         "bits",
-        "boas",
         "bras"
     ],
     "bibs": [
@@ -1311,13 +1170,8 @@
         "zits"
     ],
     "blab": [
-        "blah",
         "blob",
-        "flab",
         "slab"
-    ],
-    "blah": [
-        "blab"
     ],
     "bled": [
         "blew",
@@ -1339,23 +1193,14 @@
     ],
     "blob": [
         "blab",
-        "bloc",
         "blog",
         "blot",
         "blow",
-        "boob",
         "glob",
         "slob"
     ],
-    "bloc": [
-        "blob",
-        "blog",
-        "blot",
-        "blow"
-    ],
     "blog": [
         "blob",
-        "bloc",
         "blot",
         "blow",
         "clog",
@@ -1364,7 +1209,6 @@
     ],
     "blot": [
         "blob",
-        "bloc",
         "blog",
         "blow",
         "boot",
@@ -1375,7 +1219,6 @@
     "blow": [
         "blew",
         "blob",
-        "bloc",
         "blog",
         "blot",
         "brow",
@@ -1395,30 +1238,13 @@
     ],
     "boar": [
         "bear",
-        "boas",
         "boat",
-        "boor",
         "roar",
         "soar"
-    ],
-    "boas": [
-        "baas",
-        "bias",
-        "boar",
-        "boat",
-        "bobs",
-        "bogs",
-        "boos",
-        "bops",
-        "boss",
-        "bows",
-        "boys",
-        "bras"
     ],
     "boat": [
         "beat",
         "boar",
-        "boas",
         "bolt",
         "boot",
         "bout",
@@ -1429,15 +1255,11 @@
     ],
     "bobs": [
         "bibs",
-        "boas",
-        "bogs",
-        "boos",
         "bops",
         "boss",
         "bows",
         "boys",
         "cobs",
-        "gobs",
         "jobs",
         "lobs",
         "mobs",
@@ -1458,24 +1280,6 @@
     "body": [
         "bode",
         "bony"
-    ],
-    "bogs": [
-        "bags",
-        "begs",
-        "boas",
-        "bobs",
-        "boos",
-        "bops",
-        "boss",
-        "bows",
-        "boys",
-        "bugs",
-        "cogs",
-        "dogs",
-        "fogs",
-        "hogs",
-        "jogs",
-        "logs"
     ],
     "boil": [
         "bail",
@@ -1507,7 +1311,6 @@
         "volt"
     ],
     "bomb": [
-        "boob",
         "comb",
         "tomb",
         "womb"
@@ -1543,22 +1346,8 @@
         "bone",
         "pony"
     ],
-    "boob": [
-        "blob",
-        "bomb",
-        "book",
-        "boom",
-        "boon",
-        "boor",
-        "boos",
-        "boot"
-    ],
     "book": [
-        "boob",
         "boom",
-        "boon",
-        "boor",
-        "boos",
         "boot",
         "cook",
         "hook",
@@ -1568,68 +1357,19 @@
         "took"
     ],
     "boom": [
-        "boob",
         "book",
-        "boon",
-        "boor",
-        "boos",
         "boot",
         "doom",
         "loom",
         "room",
         "zoom"
     ],
-    "boon": [
-        "boob",
-        "book",
-        "boom",
-        "boor",
-        "boos",
-        "boot",
-        "born",
-        "goon",
-        "moon",
-        "noon",
-        "soon"
-    ],
-    "boor": [
-        "boar",
-        "boob",
-        "book",
-        "boom",
-        "boon",
-        "boos",
-        "boot",
-        "door",
-        "poor"
-    ],
-    "boos": [
-        "boas",
-        "bobs",
-        "bogs",
-        "boob",
-        "book",
-        "boom",
-        "boon",
-        "boor",
-        "boot",
-        "bops",
-        "boss",
-        "bows",
-        "boys",
-        "coos",
-        "zoos"
-    ],
     "boot": [
         "blot",
         "boat",
         "bolt",
-        "boob",
         "book",
         "boom",
-        "boon",
-        "boor",
-        "boos",
         "bout",
         "foot",
         "hoot",
@@ -1639,14 +1379,10 @@
         "toot"
     ],
     "bops": [
-        "boas",
         "bobs",
-        "bogs",
-        "boos",
         "boss",
         "bows",
         "boys",
-        "cops",
         "hops",
         "lops",
         "mops",
@@ -1672,7 +1408,6 @@
     ],
     "born": [
         "barn",
-        "boon",
         "bore",
         "burn",
         "corn",
@@ -1683,10 +1418,7 @@
     ],
     "boss": [
         "bass",
-        "boas",
         "bobs",
-        "bogs",
-        "boos",
         "bops",
         "bows",
         "boys",
@@ -1711,20 +1443,15 @@
         "boil",
         "bows",
         "fowl",
-        "howl",
-        "jowl"
+        "howl"
     ],
     "bows": [
-        "boas",
         "bobs",
-        "bogs",
-        "boos",
         "bops",
         "boss",
         "bowl",
         "boys",
         "cows",
-        "hows",
         "lows",
         "mows",
         "rows",
@@ -1735,10 +1462,7 @@
     ],
     "boys": [
         "bays",
-        "boas",
         "bobs",
-        "bogs",
-        "boos",
         "bops",
         "boss",
         "bows",
@@ -1746,12 +1470,10 @@
         "joys",
         "toys"
     ],
-    "bozo": [],
     "brag": [
         "bran",
         "bras",
         "brat",
-        "bray",
         "crag",
         "drag"
     ],
@@ -1759,17 +1481,13 @@
         "bean",
         "brag",
         "bras",
-        "brat",
-        "bray"
+        "brat"
     ],
     "bras": [
-        "baas",
         "bias",
-        "boas",
         "brag",
         "bran",
         "brat",
-        "bray",
         "eras"
     ],
     "brat": [
@@ -1778,17 +1496,7 @@
         "brag",
         "bran",
         "bras",
-        "bray",
         "frat"
-    ],
-    "bray": [
-        "brag",
-        "bran",
-        "bras",
-        "brat",
-        "fray",
-        "pray",
-        "tray"
     ],
     "bred": [
         "bled",
@@ -1839,7 +1547,6 @@
     "buff": [
         "cuff",
         "duff",
-        "guff",
         "huff",
         "muff",
         "puff",
@@ -1848,7 +1555,6 @@
     "bugs": [
         "bags",
         "begs",
-        "bogs",
         "buds",
         "bums",
         "buns",
@@ -1906,7 +1612,6 @@
         "buns",
         "buts",
         "buys",
-        "cums",
         "gums",
         "hums",
         "rums",
@@ -2055,7 +1760,6 @@
         "fuzz"
     ],
     "byes": [
-        "ayes",
         "bees",
         "dyes",
         "eyes"
@@ -2069,11 +1773,8 @@
         "caps",
         "cars",
         "cats",
-        "caws",
         "cobs",
         "cubs",
-        "dabs",
-        "gabs",
         "jabs",
         "labs",
         "nabs",
@@ -2186,7 +1887,6 @@
         "caps",
         "cars",
         "cats",
-        "caws",
         "cons",
         "fans",
         "mans",
@@ -2225,8 +1925,6 @@
         "cape",
         "cars",
         "cats",
-        "caws",
-        "cops",
         "cups",
         "gaps",
         "laps",
@@ -2293,7 +1991,6 @@
         "carp",
         "cart",
         "cats",
-        "caws",
         "ears",
         "jars",
         "mars",
@@ -2327,7 +2024,6 @@
         "cape",
         "care",
         "cash",
-        "cask",
         "cast",
         "cave",
         "ease",
@@ -2336,7 +2032,6 @@
     "cash": [
         "bash",
         "case",
-        "cask",
         "cast",
         "dash",
         "gash",
@@ -2347,20 +2042,11 @@
         "sash",
         "wash"
     ],
-    "cask": [
-        "bask",
-        "case",
-        "cash",
-        "cast",
-        "mask",
-        "task"
-    ],
     "cast": [
         "cant",
         "cart",
         "case",
         "cash",
-        "cask",
         "cost",
         "cyst",
         "east",
@@ -2376,7 +2062,6 @@
         "cans",
         "caps",
         "cars",
-        "caws",
         "cots",
         "cuts",
         "eats",
@@ -2397,7 +2082,6 @@
         "care",
         "case",
         "cove",
-        "eave",
         "gave",
         "have",
         "pave",
@@ -2405,28 +2089,12 @@
         "save",
         "wave"
     ],
-    "caws": [
-        "cabs",
-        "cans",
-        "caps",
-        "cars",
-        "cats",
-        "cows",
-        "jaws",
-        "laws",
-        "paws",
-        "saws"
-    ],
-    "cede": [
-        "code"
-    ],
     "cell": [
         "bell",
         "call",
         "cull",
         "fell",
         "hell",
-        "jell",
         "sell",
         "tell",
         "well",
@@ -2623,8 +2291,7 @@
         "slot"
     ],
     "club": [
-        "clue",
-        "flub"
+        "clue"
     ],
     "clue": [
         "blue",
@@ -2661,32 +2328,17 @@
         "cods",
         "cogs",
         "cons",
-        "coos",
-        "cops",
         "cots",
         "cows",
         "cubs",
-        "gobs",
         "jobs",
         "lobs",
         "mobs",
         "robs",
         "sobs"
     ],
-    "cock": [
-        "cook",
-        "cork",
-        "dock",
-        "hock",
-        "jock",
-        "lock",
-        "mock",
-        "rock",
-        "sock"
-    ],
     "code": [
         "bode",
-        "cede",
         "cods",
         "coke",
         "come",
@@ -2703,8 +2355,6 @@
         "code",
         "cogs",
         "cons",
-        "coos",
-        "cops",
         "cots",
         "cows",
         "gods",
@@ -2713,19 +2363,10 @@
         "rods",
         "sods"
     ],
-    "coed": [
-        "cold",
-        "cord",
-        "cued",
-        "hoed"
-    ],
     "cogs": [
-        "bogs",
         "cobs",
         "cods",
         "cons",
-        "coos",
-        "cops",
         "cots",
         "cows",
         "dogs",
@@ -2770,7 +2411,6 @@
     ],
     "cold": [
         "bold",
-        "coed",
         "cola",
         "colt",
         "cord",
@@ -2841,21 +2481,16 @@
         "cods",
         "cogs",
         "cone",
-        "coos",
-        "cops",
         "cots",
         "cows",
-        "dons",
         "ions",
         "sons",
         "tons"
     ],
     "cook": [
         "book",
-        "cock",
         "cool",
         "coop",
-        "coos",
         "cork",
         "hook",
         "look",
@@ -2868,7 +2503,6 @@
         "coil",
         "cook",
         "coop",
-        "coos",
         "fool",
         "pool",
         "tool",
@@ -2878,26 +2512,11 @@
         "chop",
         "cook",
         "cool",
-        "coos",
         "coup",
         "crop",
         "hoop",
         "loop",
         "poop"
-    ],
-    "coos": [
-        "boos",
-        "cobs",
-        "cods",
-        "cogs",
-        "cons",
-        "cook",
-        "cool",
-        "coop",
-        "cops",
-        "cots",
-        "cows",
-        "zoos"
     ],
     "cope": [
         "cape",
@@ -2905,7 +2524,6 @@
         "coke",
         "come",
         "cone",
-        "cops",
         "copy",
         "core",
         "cove",
@@ -2917,34 +2535,11 @@
         "pope",
         "rope"
     ],
-    "cops": [
-        "bops",
-        "caps",
-        "cobs",
-        "cods",
-        "cogs",
-        "cons",
-        "coos",
-        "cope",
-        "copy",
-        "cots",
-        "cows",
-        "cups",
-        "hops",
-        "lops",
-        "mops",
-        "oops",
-        "pops",
-        "sops",
-        "tops"
-    ],
     "copy": [
-        "cope",
-        "cops"
+        "cope"
     ],
     "cord": [
         "card",
-        "coed",
         "cold",
         "core",
         "cork",
@@ -2977,7 +2572,6 @@
         "wore"
     ],
     "cork": [
-        "cock",
         "cook",
         "cord",
         "core",
@@ -3014,12 +2608,9 @@
         "cods",
         "cogs",
         "cons",
-        "coos",
-        "cops",
         "cows",
         "cuts",
         "dots",
-        "jots",
         "lots",
         "pots",
         "rots"
@@ -3037,7 +2628,6 @@
         "cope",
         "core",
         "dove",
-        "hove",
         "love",
         "move",
         "rove",
@@ -3045,15 +2635,11 @@
     ],
     "cows": [
         "bows",
-        "caws",
         "cobs",
         "cods",
         "cogs",
         "cons",
-        "coos",
-        "cops",
         "cots",
-        "hows",
         "lows",
         "mows",
         "rows",
@@ -3067,7 +2653,6 @@
         "cram",
         "crap",
         "crib",
-        "drab",
         "grab"
     ],
     "crag": [
@@ -3137,27 +2722,22 @@
         "cobs",
         "cube",
         "cues",
-        "cums",
         "cups",
         "cuss",
         "cuts",
-        "dubs",
         "hubs",
         "pubs",
         "rubs",
         "tubs"
     ],
     "cued": [
-        "coed",
         "cues",
         "curd",
-        "hued",
         "sued"
     ],
     "cues": [
         "cubs",
         "cued",
-        "cums",
         "cups",
         "cuss",
         "cuts",
@@ -3168,7 +2748,6 @@
     "cuff": [
         "buff",
         "duff",
-        "guff",
         "huff",
         "muff",
         "puff",
@@ -3194,24 +2773,10 @@
         "cull",
         "curt"
     ],
-    "cums": [
-        "bums",
-        "cubs",
-        "cues",
-        "cups",
-        "cuss",
-        "cuts",
-        "gums",
-        "hums",
-        "rums",
-        "sums"
-    ],
     "cups": [
         "caps",
-        "cops",
         "cubs",
         "cues",
-        "cums",
         "cuss",
         "cuts",
         "pups"
@@ -3266,7 +2831,6 @@
     "cuss": [
         "cubs",
         "cues",
-        "cums",
         "cups",
         "cuts",
         "fuss",
@@ -3277,7 +2841,6 @@
         "cube",
         "cure",
         "cuts",
-        "jute",
         "lute",
         "mute"
     ],
@@ -3287,7 +2850,6 @@
         "cots",
         "cubs",
         "cues",
-        "cums",
         "cups",
         "cuss",
         "cute",
@@ -3303,22 +2865,7 @@
         "cast",
         "cost"
     ],
-    "dabs": [
-        "cabs",
-        "dads",
-        "dais",
-        "dams",
-        "days",
-        "dubs",
-        "gabs",
-        "jabs",
-        "labs",
-        "nabs",
-        "tabs"
-    ],
     "dads": [
-        "dabs",
-        "dais",
         "dams",
         "days",
         "duds",
@@ -3332,12 +2879,6 @@
         "deft",
         "raft",
         "waft"
-    ],
-    "dais": [
-        "dabs",
-        "dads",
-        "dams",
-        "days"
     ],
     "dame": [
         "came",
@@ -3373,9 +2914,7 @@
         "ramp"
     ],
     "dams": [
-        "dabs",
         "dads",
-        "dais",
         "dame",
         "damn",
         "damp",
@@ -3418,8 +2957,6 @@
         "darn",
         "dart",
         "dork",
-        "hark",
-        "lark",
         "mark",
         "park"
     ],
@@ -3477,7 +3014,6 @@
         "mate",
         "rate"
     ],
-    "daub": [],
     "dawn": [
         "damn",
         "darn",
@@ -3489,15 +3025,10 @@
     ],
     "days": [
         "bays",
-        "dabs",
         "dads",
-        "dais",
         "dams",
         "drys",
-        "gays",
-        "hays",
         "jays",
-        "lays",
         "nays",
         "pays",
         "rays",
@@ -3582,7 +3113,6 @@
     ],
     "deck": [
         "desk",
-        "dick",
         "dock",
         "duck",
         "heck",
@@ -3597,7 +3127,6 @@
         "died",
         "dyed",
         "feed",
-        "geed",
         "heed",
         "need",
         "peed",
@@ -3627,8 +3156,6 @@
         "deed",
         "deem",
         "deep",
-        "doer",
-        "jeer",
         "leer",
         "peer",
         "seer",
@@ -3650,22 +3177,11 @@
     "demo": [
         "memo"
     ],
-    "dens": [
-        "dent",
-        "deny",
-        "dins",
-        "dons",
-        "hens",
-        "lens",
-        "pens",
-        "tens"
-    ],
     "dent": [
         "bent",
         "cent",
         "debt",
         "deft",
-        "dens",
         "deny",
         "gent",
         "lent",
@@ -3677,7 +3193,6 @@
     ],
     "deny": [
         "defy",
-        "dens",
         "dent"
     ],
     "desk": [
@@ -3692,7 +3207,6 @@
         "vial"
     ],
     "dice": [
-        "dick",
         "dime",
         "dine",
         "dire",
@@ -3702,21 +3216,6 @@
         "nice",
         "rice",
         "vice"
-    ],
-    "dick": [
-        "deck",
-        "dice",
-        "disk",
-        "dock",
-        "duck",
-        "hick",
-        "kick",
-        "lick",
-        "nick",
-        "pick",
-        "sick",
-        "tick",
-        "wick"
     ],
     "died": [
         "deed",
@@ -3754,7 +3253,6 @@
         "dogs",
         "figs",
         "gigs",
-        "jigs",
         "pigs",
         "rigs",
         "wigs"
@@ -3794,7 +3292,6 @@
         "dime",
         "dins",
         "dips",
-        "hims",
         "rims"
     ],
     "dine": [
@@ -3816,13 +3313,11 @@
     ],
     "dins": [
         "bins",
-        "dens",
         "dies",
         "digs",
         "dims",
         "dine",
         "dips",
-        "dons",
         "fins",
         "gins",
         "pins",
@@ -3873,7 +3368,6 @@
     ],
     "disk": [
         "desk",
-        "dick",
         "disc",
         "dish",
         "dusk",
@@ -3893,9 +3387,7 @@
         "wive"
     ],
     "dock": [
-        "cock",
         "deck",
-        "dick",
         "dork",
         "duck",
         "hock",
@@ -3906,17 +3398,9 @@
         "sock"
     ],
     "dodo": [],
-    "doer": [
-        "deer",
-        "does",
-        "door",
-        "dour"
-    ],
     "does": [
         "dies",
-        "doer",
         "dogs",
-        "dons",
         "dots",
         "dues",
         "dyes",
@@ -3928,11 +3412,9 @@
         "woes"
     ],
     "dogs": [
-        "bogs",
         "cogs",
         "digs",
         "does",
-        "dons",
         "dots",
         "fogs",
         "hogs",
@@ -3984,7 +3466,6 @@
         "dine",
         "dole",
         "dome",
-        "dons",
         "dope",
         "dose",
         "dote",
@@ -3998,18 +3479,6 @@
         "tone",
         "zone"
     ],
-    "dons": [
-        "cons",
-        "dens",
-        "dins",
-        "does",
-        "dogs",
-        "done",
-        "dots",
-        "ions",
-        "sons",
-        "tons"
-    ],
     "doom": [
         "boom",
         "door",
@@ -4019,10 +3488,7 @@
         "zoom"
     ],
     "door": [
-        "boor",
-        "doer",
         "doom",
-        "dour",
         "poor"
     ],
     "dope": [
@@ -4091,22 +3557,10 @@
         "cots",
         "does",
         "dogs",
-        "dons",
         "dote",
-        "jots",
         "lots",
         "pots",
         "rots"
-    ],
-    "dour": [
-        "doer",
-        "door",
-        "four",
-        "hour",
-        "pour",
-        "sour",
-        "tour",
-        "your"
     ],
     "dove": [
         "cove",
@@ -4118,7 +3572,6 @@
         "dose",
         "dote",
         "doze",
-        "hove",
         "love",
         "move",
         "rove",
@@ -4141,21 +3594,13 @@
         "dove",
         "ooze"
     ],
-    "drab": [
-        "crab",
-        "drag",
-        "draw",
-        "grab"
-    ],
     "drag": [
         "brag",
         "crag",
-        "drab",
         "draw",
         "drug"
     ],
     "draw": [
-        "drab",
         "drag",
         "drew"
     ],
@@ -4191,21 +3636,9 @@
         "duel",
         "dull"
     ],
-    "dubs": [
-        "cubs",
-        "dabs",
-        "duds",
-        "dues",
-        "duos",
-        "hubs",
-        "pubs",
-        "rubs",
-        "tubs"
-    ],
     "duck": [
         "buck",
         "deck",
-        "dick",
         "dock",
         "duct",
         "dunk",
@@ -4233,7 +3666,6 @@
     "duds": [
         "buds",
         "dads",
-        "dubs",
         "dude",
         "dues",
         "duos",
@@ -4250,7 +3682,6 @@
         "cues",
         "dies",
         "does",
-        "dubs",
         "duds",
         "duel",
         "duet",
@@ -4269,7 +3700,6 @@
     "duff": [
         "buff",
         "cuff",
-        "guff",
         "huff",
         "muff",
         "puff",
@@ -4279,7 +3709,6 @@
         "dude",
         "dune",
         "dupe",
-        "dyke",
         "nuke",
         "puke"
     ],
@@ -4352,7 +3781,6 @@
         "sunk"
     ],
     "duos": [
-        "dubs",
         "duds",
         "dues"
     ],
@@ -4394,16 +3822,12 @@
         "eyed"
     ],
     "dyes": [
-        "ayes",
         "byes",
         "dies",
         "does",
         "dues",
         "dyed",
         "eyes"
-    ],
-    "dyke": [
-        "duke"
     ],
     "each": [
         "etch"
@@ -4426,7 +3850,6 @@
         "earl",
         "earn",
         "eats",
-        "errs",
         "jars",
         "mars",
         "oars",
@@ -4439,7 +3862,6 @@
         "case",
         "east",
         "easy",
-        "eave",
         "else",
         "vase"
     ],
@@ -4469,26 +3891,11 @@
         "rats",
         "vats"
     ],
-    "eave": [
-        "cave",
-        "ease",
-        "gave",
-        "have",
-        "pave",
-        "rave",
-        "save",
-        "wave"
-    ],
-    "ebbs": [],
     "echo": [],
-    "eddy": [
-        "edgy"
-    ],
     "edge": [
         "edgy"
     ],
     "edgy": [
-        "eddy",
         "edge"
     ],
     "edit": [
@@ -4504,24 +3911,7 @@
     "egos": [
         "eggs"
     ],
-    "eked": [
-        "ekes",
-        "eyed"
-    ],
-    "ekes": [
-        "eked",
-        "eves",
-        "ewes",
-        "exes",
-        "eyes"
-    ],
-    "elks": [
-        "elms"
-    ],
-    "elms": [
-        "alms",
-        "elks"
-    ],
+    "elks": [],
     "else": [
         "ease"
     ],
@@ -4538,13 +3928,7 @@
     "envy": [],
     "epic": [],
     "eras": [
-        "bras",
-        "errs"
-    ],
-    "ergo": [],
-    "errs": [
-        "ears",
-        "eras"
+        "bras"
     ],
     "etch": [
         "each",
@@ -4561,7 +3945,6 @@
         "over"
     ],
     "eves": [
-        "ekes",
         "even",
         "ever",
         "ewes",
@@ -4571,39 +3954,29 @@
     "evil": [],
     "ewes": [
         "awes",
-        "ekes",
         "eves",
         "exes",
         "eyes",
         "owes"
     ],
     "exam": [],
-    "exec": [
-        "exes"
-    ],
     "exes": [
         "axes",
-        "ekes",
         "eves",
         "ewes",
-        "exec",
         "eyes"
     ],
     "exit": [
         "edit",
         "emit"
     ],
-    "expo": [],
     "eyed": [
         "dyed",
-        "eked",
         "eyes"
     ],
     "eyes": [
-        "ayes",
         "byes",
         "dyes",
-        "ekes",
         "eves",
         "ewes",
         "exes",
@@ -4646,29 +4019,12 @@
     "fads": [
         "dads",
         "fade",
-        "fags",
         "fans",
         "fats",
         "feds",
         "lads",
         "pads",
         "wads"
-    ],
-    "fags": [
-        "bags",
-        "fads",
-        "fans",
-        "fats",
-        "figs",
-        "fogs",
-        "gags",
-        "hags",
-        "lags",
-        "nags",
-        "rags",
-        "sags",
-        "tags",
-        "wags"
     ],
     "fail": [
         "bail",
@@ -4750,7 +4106,6 @@
         "bans",
         "cans",
         "fads",
-        "fags",
         "fang",
         "fats",
         "fins",
@@ -4833,7 +4188,6 @@
         "cats",
         "eats",
         "fads",
-        "fags",
         "fans",
         "fate",
         "fits",
@@ -4883,7 +4237,6 @@
         "feet",
         "felt",
         "fest",
-        "fiat",
         "flat",
         "frat",
         "heat",
@@ -4908,7 +4261,6 @@
         "fend",
         "feud",
         "fled",
-        "geed",
         "heed",
         "need",
         "peed",
@@ -4934,7 +4286,6 @@
         "feel",
         "feet",
         "foes",
-        "gees",
         "pees",
         "sees",
         "tees",
@@ -4960,7 +4311,6 @@
         "fill",
         "full",
         "hell",
-        "jell",
         "sell",
         "tell",
         "well",
@@ -5011,30 +4361,20 @@
         "feed",
         "fend"
     ],
-    "fiat": [
-        "feat",
-        "fist",
-        "flat",
-        "frat"
-    ],
     "fibs": [
         "bibs",
         "figs",
         "fins",
-        "firs",
         "fits",
         "ribs"
     ],
     "figs": [
         "digs",
-        "fags",
         "fibs",
         "fins",
-        "firs",
         "fits",
         "fogs",
         "gigs",
-        "jigs",
         "pigs",
         "rigs",
         "wigs"
@@ -5110,7 +4450,6 @@
         "figs",
         "find",
         "fine",
-        "firs",
         "fits",
         "gins",
         "pins",
@@ -5124,7 +4463,6 @@
         "file",
         "fine",
         "firm",
-        "firs",
         "five",
         "fore",
         "hire",
@@ -5136,19 +4474,7 @@
         "farm",
         "film",
         "fire",
-        "firs",
         "form"
-    ],
-    "firs": [
-        "airs",
-        "fibs",
-        "figs",
-        "fins",
-        "fire",
-        "firm",
-        "fits",
-        "furs",
-        "sirs"
     ],
     "fish": [
         "dish",
@@ -5158,7 +4484,6 @@
     "fist": [
         "fast",
         "fest",
-        "fiat",
         "fish",
         "gist",
         "list",
@@ -5171,7 +4496,6 @@
         "fibs",
         "figs",
         "fins",
-        "firs",
         "hits",
         "kits",
         "nits",
@@ -5191,40 +4515,16 @@
         "live",
         "wive"
     ],
-    "fizz": [
-        "fuzz"
-    ],
-    "flab": [
-        "blab",
-        "flag",
-        "flak",
-        "flap",
-        "flat",
-        "flaw",
-        "flub",
-        "slab"
-    ],
     "flag": [
-        "flab",
-        "flak",
         "flap",
         "flat",
         "flaw",
         "flog",
         "slag"
     ],
-    "flak": [
-        "flab",
-        "flag",
-        "flap",
-        "flat",
-        "flaw"
-    ],
     "flap": [
         "clap",
-        "flab",
         "flag",
-        "flak",
         "flat",
         "flaw",
         "flip",
@@ -5233,10 +4533,7 @@
     ],
     "flat": [
         "feat",
-        "fiat",
-        "flab",
         "flag",
-        "flak",
         "flap",
         "flaw",
         "flit",
@@ -5245,9 +4542,7 @@
     ],
     "flaw": [
         "claw",
-        "flab",
         "flag",
-        "flak",
         "flap",
         "flat",
         "flew",
@@ -5334,23 +4629,15 @@
         "glow",
         "slow"
     ],
-    "flub": [
-        "club",
-        "flab",
-        "flue",
-        "flux"
-    ],
     "flue": [
         "blue",
         "clue",
         "flee",
-        "flub",
         "flux",
         "glue"
     ],
     "flux": [
         "flex",
-        "flub",
         "flue"
     ],
     "foal": [
@@ -5378,10 +4665,8 @@
         "woes"
     ],
     "fogs": [
-        "bogs",
         "cogs",
         "dogs",
-        "fags",
         "figs",
         "foes",
         "hogs",
@@ -5541,7 +4826,6 @@
         "soul"
     ],
     "four": [
-        "dour",
         "foul",
         "hour",
         "pour",
@@ -5555,20 +4839,17 @@
         "foil",
         "fool",
         "foul",
-        "howl",
-        "jowl"
+        "howl"
     ],
     "foxy": [],
     "frat": [
         "brat",
         "feat",
-        "fiat",
         "flat",
         "fray",
         "fret"
     ],
     "fray": [
-        "bray",
         "frat",
         "pray",
         "tray"
@@ -5642,7 +4923,6 @@
         "hurl"
     ],
     "furs": [
-        "firs",
         "furl",
         "fury",
         "fuss",
@@ -5667,31 +4947,13 @@
         "puss"
     ],
     "fuzz": [
-        "buzz",
-        "fizz"
-    ],
-    "gabs": [
-        "cabs",
-        "dabs",
-        "gags",
-        "gals",
-        "gaps",
-        "gays",
-        "gobs",
-        "jabs",
-        "labs",
-        "nabs",
-        "tabs"
+        "buzz"
     ],
     "gags": [
         "bags",
-        "fags",
-        "gabs",
         "gals",
         "gaps",
-        "gays",
         "gigs",
-        "hags",
         "lags",
         "nags",
         "rags",
@@ -5714,14 +4976,8 @@
         "grit",
         "wait"
     ],
-    "gala": [
-        "gale",
-        "gall",
-        "gals"
-    ],
     "gale": [
         "bale",
-        "gala",
         "gall",
         "gals",
         "game",
@@ -5739,7 +4995,6 @@
         "ball",
         "call",
         "fall",
-        "gala",
         "gale",
         "gals",
         "gill",
@@ -5750,13 +5005,10 @@
         "wall"
     ],
     "gals": [
-        "gabs",
         "gags",
-        "gala",
         "gale",
         "gall",
         "gaps",
-        "gays",
         "gels",
         "pals"
     ],
@@ -5798,12 +5050,9 @@
     ],
     "gaps": [
         "caps",
-        "gabs",
         "gags",
         "gals",
         "gape",
-        "gays",
-        "gyps",
         "laps",
         "maps",
         "naps",
@@ -5812,9 +5061,6 @@
         "taps",
         "yaps",
         "zaps"
-    ],
-    "garb": [
-        "barb"
     ],
     "gash": [
         "bash",
@@ -5851,7 +5097,6 @@
     ],
     "gave": [
         "cave",
-        "eave",
         "gale",
         "game",
         "gape",
@@ -5866,23 +5111,6 @@
     ],
     "gawk": [
         "hawk"
-    ],
-    "gays": [
-        "bays",
-        "days",
-        "gabs",
-        "gags",
-        "gals",
-        "gaps",
-        "guys",
-        "hays",
-        "jays",
-        "lays",
-        "nays",
-        "pays",
-        "rays",
-        "says",
-        "ways"
     ],
     "gaze": [
         "daze",
@@ -5909,21 +5137,7 @@
         "wear",
         "year"
     ],
-    "geed": [
-        "deed",
-        "feed",
-        "geek",
-        "gees",
-        "heed",
-        "need",
-        "peed",
-        "reed",
-        "seed",
-        "weed"
-    ],
     "geek": [
-        "geed",
-        "gees",
         "leek",
         "meek",
         "peek",
@@ -5931,29 +5145,13 @@
         "seek",
         "week"
     ],
-    "gees": [
-        "bees",
-        "fees",
-        "geed",
-        "geek",
-        "gels",
-        "gems",
-        "gets",
-        "goes",
-        "pees",
-        "sees",
-        "tees",
-        "wees"
-    ],
     "gels": [
         "eels",
         "gals",
-        "gees",
         "gems",
         "gets"
     ],
     "gems": [
-        "gees",
         "gels",
         "gets",
         "gums",
@@ -5982,7 +5180,6 @@
     ],
     "gets": [
         "bets",
-        "gees",
         "gels",
         "gems",
         "guts",
@@ -6005,7 +5202,6 @@
         "figs",
         "gags",
         "gins",
-        "jigs",
         "pigs",
         "rigs",
         "wigs"
@@ -6058,8 +5254,7 @@
     ],
     "glad": [
         "clad",
-        "goad",
-        "grad"
+        "goad"
     ],
     "glee": [
         "flee",
@@ -6102,7 +5297,6 @@
         "goat",
         "gold",
         "good",
-        "grad",
         "load",
         "road",
         "toad"
@@ -6122,21 +5316,8 @@
         "gout",
         "moat"
     ],
-    "gobs": [
-        "bobs",
-        "cobs",
-        "gabs",
-        "gods",
-        "goes",
-        "jobs",
-        "lobs",
-        "mobs",
-        "robs",
-        "sobs"
-    ],
     "gods": [
         "cods",
-        "gobs",
         "goes",
         "nods",
         "pods",
@@ -6146,8 +5327,6 @@
     "goes": [
         "does",
         "foes",
-        "gees",
-        "gobs",
         "gods",
         "hoes",
         "noes",
@@ -6209,7 +5388,6 @@
         "woof"
     ],
     "goon": [
-        "boon",
         "good",
         "goof",
         "gown",
@@ -6252,22 +5430,12 @@
     ],
     "grab": [
         "crab",
-        "drab",
-        "grad",
         "gram",
         "grub"
-    ],
-    "grad": [
-        "glad",
-        "goad",
-        "grab",
-        "gram",
-        "grid"
     ],
     "gram": [
         "cram",
         "grab",
-        "grad",
         "grim",
         "pram"
     ],
@@ -6279,7 +5447,6 @@
     ],
     "grid": [
         "arid",
-        "grad",
         "grim",
         "grin",
         "grip",
@@ -6326,19 +5493,8 @@
     "grub": [
         "grab"
     ],
-    "guff": [
-        "buff",
-        "cuff",
-        "duff",
-        "gulf",
-        "huff",
-        "muff",
-        "puff",
-        "ruff"
-    ],
     "gulf": [
         "golf",
-        "guff",
         "gull",
         "gulp"
     ],
@@ -6364,7 +5520,6 @@
     ],
     "gums": [
         "bums",
-        "cums",
         "gems",
         "guns",
         "guts",
@@ -6436,23 +5591,16 @@
     ],
     "guys": [
         "buys",
-        "gays",
         "gums",
         "guns",
         "guts"
     ],
     "gyms": [
         "gems",
-        "gums",
-        "gyps"
-    ],
-    "gyps": [
-        "gaps",
-        "gyms"
+        "gums"
     ],
     "hack": [
         "back",
-        "hark",
         "hawk",
         "heck",
         "hick",
@@ -6463,22 +5611,6 @@
         "rack",
         "sack",
         "tack"
-    ],
-    "hags": [
-        "bags",
-        "fags",
-        "gags",
-        "hams",
-        "hats",
-        "hays",
-        "hogs",
-        "hugs",
-        "lags",
-        "nags",
-        "rags",
-        "sags",
-        "tags",
-        "wags"
     ],
     "hail": [
         "bail",
@@ -6562,11 +5694,8 @@
     ],
     "hams": [
         "dams",
-        "hags",
         "hats",
-        "hays",
         "hems",
-        "hims",
         "hums",
         "jams",
         "rams",
@@ -6597,7 +5726,6 @@
         "card",
         "hand",
         "hare",
-        "hark",
         "harm",
         "harp",
         "hart",
@@ -6613,7 +5741,6 @@
         "fare",
         "hale",
         "hard",
-        "hark",
         "harm",
         "harp",
         "hart",
@@ -6626,25 +5753,10 @@
         "rare",
         "ware"
     ],
-    "hark": [
-        "bark",
-        "dark",
-        "hack",
-        "hard",
-        "hare",
-        "harm",
-        "harp",
-        "hart",
-        "hawk",
-        "lark",
-        "mark",
-        "park"
-    ],
     "harm": [
         "farm",
         "hard",
         "hare",
-        "hark",
         "harp",
         "hart",
         "warm"
@@ -6653,7 +5765,6 @@
         "carp",
         "hard",
         "hare",
-        "hark",
         "harm",
         "hart",
         "tarp",
@@ -6666,7 +5777,6 @@
         "halt",
         "hard",
         "hare",
-        "hark",
         "harm",
         "harp",
         "hurt",
@@ -6706,10 +5816,8 @@
         "cats",
         "eats",
         "fats",
-        "hags",
         "hams",
         "hate",
-        "hays",
         "hits",
         "huts",
         "mats",
@@ -6725,14 +5833,12 @@
     ],
     "have": [
         "cave",
-        "eave",
         "gave",
         "hale",
         "hare",
         "hate",
         "haze",
         "hive",
-        "hove",
         "pave",
         "rave",
         "save",
@@ -6740,23 +5846,7 @@
     ],
     "hawk": [
         "gawk",
-        "hack",
-        "hark"
-    ],
-    "hays": [
-        "bays",
-        "days",
-        "gays",
-        "hags",
-        "hams",
-        "hats",
-        "jays",
-        "lays",
-        "nays",
-        "pays",
-        "rays",
-        "says",
-        "ways"
+        "hack"
     ],
     "haze": [
         "daze",
@@ -6854,13 +5944,10 @@
     "heed": [
         "deed",
         "feed",
-        "geed",
         "head",
         "heel",
         "held",
         "herd",
-        "hoed",
-        "hued",
         "need",
         "peed",
         "reed",
@@ -6903,7 +5990,6 @@
         "help",
         "hill",
         "hull",
-        "jell",
         "sell",
         "tell",
         "well",
@@ -6937,11 +6023,9 @@
         "hens",
         "hers",
         "hews",
-        "hims",
         "hums"
     ],
     "hens": [
-        "dens",
         "hems",
         "hers",
         "hews",
@@ -6997,14 +6081,12 @@
         "hems",
         "hens",
         "hers",
-        "hows",
         "mews",
         "news",
         "pews",
         "sews"
     ],
     "hick": [
-        "dick",
         "hack",
         "heck",
         "hock",
@@ -7059,23 +6141,11 @@
         "halt",
         "hill",
         "hint",
-        "jilt",
         "kilt",
         "lilt",
         "silt",
         "tilt",
         "wilt"
-    ],
-    "hims": [
-        "aims",
-        "dims",
-        "hams",
-        "hems",
-        "hips",
-        "hiss",
-        "hits",
-        "hums",
-        "rims"
     ],
     "hind": [
         "bind",
@@ -7098,7 +6168,6 @@
     ],
     "hips": [
         "dips",
-        "hims",
         "hiss",
         "hits",
         "hops",
@@ -7121,7 +6190,6 @@
         "wire"
     ],
     "hiss": [
-        "hims",
         "hips",
         "hits",
         "kiss",
@@ -7132,7 +6200,6 @@
         "bits",
         "fits",
         "hats",
-        "hims",
         "hips",
         "hiss",
         "huts",
@@ -7151,7 +6218,6 @@
         "hide",
         "hike",
         "hire",
-        "hove",
         "jive",
         "live",
         "wive"
@@ -7159,9 +6225,7 @@
     "hoax": [
         "coax"
     ],
-    "hobo": [],
     "hock": [
-        "cock",
         "dock",
         "hack",
         "heck",
@@ -7174,36 +6238,23 @@
         "rock",
         "sock"
     ],
-    "hoed": [
-        "coed",
-        "heed",
-        "hoes",
-        "hold",
-        "hood",
-        "hued"
-    ],
     "hoes": [
         "does",
         "foes",
         "goes",
-        "hoed",
         "hogs",
         "hops",
-        "hows",
         "hues",
         "noes",
         "toes",
         "woes"
     ],
     "hogs": [
-        "bogs",
         "cogs",
         "dogs",
         "fogs",
-        "hags",
         "hoes",
         "hops",
-        "hows",
         "hugs",
         "jogs",
         "logs"
@@ -7214,7 +6265,6 @@
         "fold",
         "gold",
         "held",
-        "hoed",
         "hole",
         "holy",
         "hood",
@@ -7230,7 +6280,6 @@
         "hone",
         "hope",
         "hose",
-        "hove",
         "mole",
         "pole",
         "role",
@@ -7247,7 +6296,6 @@
         "hone",
         "hope",
         "hose",
-        "hove",
         "some",
         "tome"
     ],
@@ -7261,7 +6309,6 @@
         "honk",
         "hope",
         "hose",
-        "hove",
         "lone",
         "none",
         "tone",
@@ -7277,7 +6324,6 @@
     "hood": [
         "food",
         "good",
-        "hoed",
         "hold",
         "hoof",
         "hook",
@@ -7339,7 +6385,6 @@
         "hone",
         "hops",
         "hose",
-        "hove",
         "hype",
         "lope",
         "mope",
@@ -7349,12 +6394,10 @@
     ],
     "hops": [
         "bops",
-        "cops",
         "hips",
         "hoes",
         "hogs",
         "hope",
-        "hows",
         "lops",
         "mops",
         "oops",
@@ -7376,7 +6419,6 @@
         "hone",
         "hope",
         "host",
-        "hove",
         "lose",
         "nose",
         "pose",
@@ -7391,53 +6433,18 @@
         "post"
     ],
     "hour": [
-        "dour",
         "four",
         "pour",
         "sour",
         "tour",
         "your"
     ],
-    "hove": [
-        "cove",
-        "dove",
-        "have",
-        "hive",
-        "hole",
-        "home",
-        "hone",
-        "hope",
-        "hose",
-        "love",
-        "move",
-        "rove",
-        "wove"
-    ],
     "howl": [
         "bowl",
-        "fowl",
-        "hows",
-        "jowl"
-    ],
-    "hows": [
-        "bows",
-        "cows",
-        "hews",
-        "hoes",
-        "hogs",
-        "hops",
-        "howl",
-        "lows",
-        "mows",
-        "rows",
-        "sows",
-        "tows",
-        "vows",
-        "wows"
+        "fowl"
     ],
     "hubs": [
         "cubs",
-        "dubs",
         "hues",
         "hugs",
         "hums",
@@ -7446,19 +6453,11 @@
         "rubs",
         "tubs"
     ],
-    "hued": [
-        "cued",
-        "heed",
-        "hoed",
-        "hues",
-        "sued"
-    ],
     "hues": [
         "cues",
         "dues",
         "hoes",
         "hubs",
-        "hued",
         "hugs",
         "hums",
         "huts",
@@ -7468,7 +6467,6 @@
         "buff",
         "cuff",
         "duff",
-        "guff",
         "muff",
         "puff",
         "ruff"
@@ -7478,7 +6476,6 @@
     ],
     "hugs": [
         "bugs",
-        "hags",
         "hogs",
         "hubs",
         "hues",
@@ -7526,11 +6523,9 @@
     ],
     "hums": [
         "bums",
-        "cums",
         "gums",
         "hams",
         "hems",
-        "hims",
         "hubs",
         "hues",
         "hugs",
@@ -7660,8 +6655,7 @@
     ],
     "inks": [
         "inky",
-        "inns",
-        "irks"
+        "inns"
     ],
     "inky": [
         "icky",
@@ -7678,20 +6672,11 @@
     ],
     "ions": [
         "cons",
-        "dons",
         "inns",
         "sons",
         "tons"
     ],
-    "iota": [],
-    "iris": [
-        "irks"
-    ],
-    "irks": [
-        "arks",
-        "inks",
-        "iris"
-    ],
+    "iris": [],
     "iron": [
         "icon"
     ],
@@ -7707,8 +6692,6 @@
     ],
     "jabs": [
         "cabs",
-        "dabs",
-        "gabs",
         "jams",
         "jars",
         "jaws",
@@ -7747,15 +6730,10 @@
         "tail",
         "wail"
     ],
-    "jamb": [
-        "jams",
-        "lamb"
-    ],
     "jams": [
         "dams",
         "hams",
         "jabs",
-        "jamb",
         "jars",
         "jaws",
         "jays",
@@ -7777,7 +6755,6 @@
         "wars"
     ],
     "jaws": [
-        "caws",
         "jabs",
         "jams",
         "jars",
@@ -7789,14 +6766,11 @@
     "jays": [
         "bays",
         "days",
-        "gays",
-        "hays",
         "jabs",
         "jams",
         "jars",
         "jaws",
         "joys",
-        "lays",
         "nays",
         "pays",
         "rays",
@@ -7805,29 +6779,6 @@
     ],
     "jazz": [
         "razz"
-    ],
-    "jeer": [
-        "beer",
-        "deer",
-        "jeez",
-        "leer",
-        "peer",
-        "seer",
-        "veer",
-        "weer"
-    ],
-    "jeez": [
-        "jeer"
-    ],
-    "jell": [
-        "bell",
-        "cell",
-        "fell",
-        "hell",
-        "sell",
-        "tell",
-        "well",
-        "yell"
     ],
     "jerk": [
         "perk"
@@ -7848,7 +6799,6 @@
     "jets": [
         "bets",
         "gets",
-        "jots",
         "juts",
         "lets",
         "nets",
@@ -7857,46 +6807,19 @@
         "vets",
         "wets"
     ],
-    "jibe": [
-        "jive",
-        "vibe"
-    ],
-    "jigs": [
-        "digs",
-        "figs",
-        "gigs",
-        "jogs",
-        "jugs",
-        "pigs",
-        "rigs",
-        "wigs"
-    ],
-    "jilt": [
-        "hilt",
-        "jolt",
-        "kilt",
-        "lilt",
-        "silt",
-        "tilt",
-        "wilt"
-    ],
-    "jinx": [],
     "jive": [
         "dive",
         "five",
         "give",
         "hive",
-        "jibe",
         "live",
         "wive"
     ],
     "jobs": [
         "bobs",
         "cobs",
-        "gobs",
         "jabs",
         "jogs",
-        "jots",
         "joys",
         "lobs",
         "mobs",
@@ -7904,7 +6827,6 @@
         "sobs"
     ],
     "jock": [
-        "cock",
         "dock",
         "hock",
         "jack",
@@ -7914,14 +6836,11 @@
         "sock"
     ],
     "jogs": [
-        "bogs",
         "cogs",
         "dogs",
         "fogs",
         "hogs",
-        "jigs",
         "jobs",
-        "jots",
         "joys",
         "jugs",
         "logs"
@@ -7943,39 +6862,19 @@
     "jolt": [
         "bolt",
         "colt",
-        "jilt",
         "volt"
-    ],
-    "jots": [
-        "cots",
-        "dots",
-        "jets",
-        "jobs",
-        "jogs",
-        "joys",
-        "juts",
-        "lots",
-        "pots",
-        "rots"
-    ],
-    "jowl": [
-        "bowl",
-        "fowl",
-        "howl"
     ],
     "joys": [
         "boys",
         "jays",
         "jobs",
         "jogs",
-        "jots",
         "toys"
     ],
     "judo": [],
     "jugs": [
         "bugs",
         "hugs",
-        "jigs",
         "jogs",
         "juts",
         "lugs",
@@ -8014,21 +6913,13 @@
         "oust",
         "rust"
     ],
-    "jute": [
-        "cute",
-        "juts",
-        "lute",
-        "mute"
-    ],
     "juts": [
         "buts",
         "cuts",
         "guts",
         "huts",
         "jets",
-        "jots",
         "jugs",
-        "jute",
         "nuts",
         "outs",
         "puts",
@@ -8077,7 +6968,6 @@
         "kegs"
     ],
     "kick": [
-        "dick",
         "hick",
         "kink",
         "lick",
@@ -8123,7 +7013,6 @@
     ],
     "kilt": [
         "hilt",
-        "jilt",
         "kill",
         "kiln",
         "kilo",
@@ -8222,15 +7111,12 @@
     ],
     "labs": [
         "cabs",
-        "dabs",
-        "gabs",
         "jabs",
         "lads",
         "lags",
         "laps",
         "lass",
         "laws",
-        "lays",
         "lobs",
         "nabs",
         "tabs"
@@ -8255,7 +7141,6 @@
         "jack",
         "lace",
         "lacy",
-        "lark",
         "lick",
         "lock",
         "luck",
@@ -8295,7 +7180,6 @@
         "laps",
         "lass",
         "laws",
-        "lays",
         "lids",
         "pads",
         "wads"
@@ -8308,15 +7192,12 @@
     ],
     "lags": [
         "bags",
-        "fags",
         "gags",
-        "hags",
         "labs",
         "lads",
         "laps",
         "lass",
         "laws",
-        "lays",
         "legs",
         "logs",
         "lugs",
@@ -8331,7 +7212,6 @@
         "lair",
         "land",
         "lard",
-        "laud",
         "maid",
         "paid",
         "raid",
@@ -8372,7 +7252,6 @@
         "wake"
     ],
     "lamb": [
-        "jamb",
         "lame",
         "lamp",
         "limb"
@@ -8409,7 +7288,6 @@
         "laid",
         "lane",
         "lard",
-        "laud",
         "lend",
         "sand",
         "wand"
@@ -8439,7 +7317,6 @@
         "lags",
         "lass",
         "laws",
-        "lays",
         "lips",
         "lops",
         "maps",
@@ -8456,21 +7333,9 @@
         "hard",
         "laid",
         "land",
-        "lark",
-        "laud",
         "lord",
         "ward",
         "yard"
-    ],
-    "lark": [
-        "bark",
-        "dark",
-        "hark",
-        "lack",
-        "lard",
-        "lurk",
-        "mark",
-        "park"
     ],
     "lash": [
         "bash",
@@ -8480,7 +7345,6 @@
         "hash",
         "lass",
         "last",
-        "lath",
         "lush",
         "mash",
         "rash",
@@ -8496,7 +7360,6 @@
         "lash",
         "last",
         "laws",
-        "lays",
         "less",
         "loss",
         "mass",
@@ -8528,25 +7391,10 @@
         "lake",
         "lame",
         "lane",
-        "lath",
         "lite",
         "lute",
         "mate",
         "rate"
-    ],
-    "lath": [
-        "bath",
-        "lash",
-        "late",
-        "oath",
-        "path"
-    ],
-    "laud": [
-        "baud",
-        "laid",
-        "land",
-        "lard",
-        "loud"
     ],
     "lava": [],
     "lawn": [
@@ -8558,7 +7406,6 @@
         "yawn"
     ],
     "laws": [
-        "caws",
         "jaws",
         "labs",
         "lads",
@@ -8566,28 +7413,9 @@
         "laps",
         "lass",
         "lawn",
-        "lays",
         "lows",
         "paws",
         "saws"
-    ],
-    "lays": [
-        "bays",
-        "days",
-        "gays",
-        "hays",
-        "jays",
-        "labs",
-        "lads",
-        "lags",
-        "laps",
-        "lass",
-        "laws",
-        "nays",
-        "pays",
-        "rays",
-        "says",
-        "ways"
     ],
     "lazy": [
         "hazy",
@@ -8658,7 +7486,6 @@
     "leer": [
         "beer",
         "deer",
-        "jeer",
         "leek",
         "peer",
         "seer",
@@ -8697,7 +7524,6 @@
         "vend"
     ],
     "lens": [
-        "dens",
         "hens",
         "legs",
         "lend",
@@ -8787,7 +7613,6 @@
         "vice"
     ],
     "lick": [
-        "dick",
         "hick",
         "kick",
         "lack",
@@ -8874,7 +7699,6 @@
     ],
     "lilt": [
         "hilt",
-        "jilt",
         "kilt",
         "lift",
         "lily",
@@ -9066,7 +7890,6 @@
     "lobs": [
         "bobs",
         "cobs",
-        "gobs",
         "jobs",
         "labs",
         "lobe",
@@ -9080,7 +7903,6 @@
         "sobs"
     ],
     "lock": [
-        "cock",
         "dock",
         "hock",
         "jock",
@@ -9103,7 +7925,6 @@
         "logs"
     ],
     "logs": [
-        "bogs",
         "cogs",
         "dogs",
         "fogs",
@@ -9215,7 +8036,6 @@
     ],
     "lops": [
         "bops",
-        "cops",
         "hops",
         "laps",
         "lips",
@@ -9304,7 +8124,6 @@
     "lots": [
         "cots",
         "dots",
-        "jots",
         "lets",
         "lobs",
         "logs",
@@ -9315,14 +8134,12 @@
         "rots"
     ],
     "loud": [
-        "laud",
         "load",
         "lord"
     ],
     "love": [
         "cove",
         "dove",
-        "hove",
         "live",
         "lobe",
         "lone",
@@ -9336,7 +8153,6 @@
     "lows": [
         "bows",
         "cows",
-        "hows",
         "laws",
         "lobs",
         "logs",
@@ -9414,7 +8230,6 @@
         "sure"
     ],
     "lurk": [
-        "lark",
         "luck",
         "lure"
     ],
@@ -9445,7 +8260,6 @@
     ],
     "lute": [
         "cute",
-        "jute",
         "late",
         "lite",
         "lure",
@@ -9639,8 +8453,6 @@
     "mark": [
         "bark",
         "dark",
-        "hark",
-        "lark",
         "mars",
         "mart",
         "mask",
@@ -9693,7 +8505,6 @@
     ],
     "mask": [
         "bask",
-        "cask",
         "mark",
         "mash",
         "mass",
@@ -10077,7 +8888,6 @@
     "mobs": [
         "bobs",
         "cobs",
-        "gobs",
         "jobs",
         "lobs",
         "mops",
@@ -10087,7 +8897,6 @@
         "sobs"
     ],
     "mock": [
-        "cock",
         "dock",
         "hock",
         "jock",
@@ -10138,7 +8947,6 @@
         "wood"
     ],
     "moon": [
-        "boon",
         "goon",
         "moan",
         "mood",
@@ -10162,7 +8970,6 @@
     ],
     "mops": [
         "bops",
-        "cops",
         "hops",
         "lops",
         "maps",
@@ -10232,7 +9039,6 @@
     "move": [
         "cove",
         "dove",
-        "hove",
         "love",
         "mode",
         "mole",
@@ -10244,7 +9050,6 @@
     "mows": [
         "bows",
         "cows",
-        "hows",
         "lows",
         "mews",
         "mobs",
@@ -10278,7 +9083,6 @@
         "buff",
         "cuff",
         "duff",
-        "guff",
         "huff",
         "miff",
         "puff",
@@ -10367,7 +9171,6 @@
     ],
     "mute": [
         "cute",
-        "jute",
         "lute",
         "mate",
         "mite",
@@ -10387,8 +9190,6 @@
     ],
     "nabs": [
         "cabs",
-        "dabs",
-        "gabs",
         "jabs",
         "labs",
         "nags",
@@ -10398,9 +9199,7 @@
     ],
     "nags": [
         "bags",
-        "fags",
         "gags",
-        "hags",
         "lags",
         "nabs",
         "naps",
@@ -10462,10 +9261,7 @@
     "nays": [
         "bays",
         "days",
-        "gays",
-        "hays",
         "jays",
-        "lays",
         "nabs",
         "nags",
         "naps",
@@ -10510,7 +9306,6 @@
     "need": [
         "deed",
         "feed",
-        "geed",
         "heed",
         "nerd",
         "peed",
@@ -10583,7 +9378,6 @@
         "vice"
     ],
     "nick": [
-        "dick",
         "hick",
         "kick",
         "lick",
@@ -10677,7 +9471,6 @@
         "took"
     ],
     "noon": [
-        "boon",
         "goon",
         "moon",
         "neon",
@@ -10809,7 +9602,6 @@
     ],
     "oath": [
         "bath",
-        "lath",
         "oats",
         "path"
     ],
@@ -10894,13 +9686,11 @@
         "unto"
     ],
     "onus": [
-        "anus",
         "ones",
         "opus"
     ],
     "oops": [
         "bops",
-        "cops",
         "hops",
         "lops",
         "mops",
@@ -10934,7 +9724,6 @@
         "oval"
     ],
     "ores": [
-        "ares",
         "odes",
         "ones",
         "owes"
@@ -11242,8 +10031,6 @@
     "park": [
         "bark",
         "dark",
-        "hark",
-        "lark",
         "mark",
         "pack",
         "pare",
@@ -11320,7 +10107,6 @@
     ],
     "path": [
         "bath",
-        "lath",
         "oath",
         "pats"
     ],
@@ -11349,7 +10135,6 @@
     ],
     "pave": [
         "cave",
-        "eave",
         "gave",
         "have",
         "pace",
@@ -11370,7 +10155,6 @@
         "yawn"
     ],
     "paws": [
-        "caws",
         "jaws",
         "laws",
         "pads",
@@ -11387,10 +10171,7 @@
     "pays": [
         "bays",
         "days",
-        "gays",
-        "hays",
         "jays",
-        "lays",
         "nays",
         "pads",
         "pals",
@@ -11491,7 +10272,6 @@
     "peed": [
         "deed",
         "feed",
-        "geed",
         "heed",
         "need",
         "peek",
@@ -11547,7 +10327,6 @@
     "peer": [
         "beer",
         "deer",
-        "jeer",
         "leer",
         "pear",
         "peed",
@@ -11563,7 +10342,6 @@
     "pees": [
         "bees",
         "fees",
-        "gees",
         "peas",
         "peed",
         "peek",
@@ -11601,7 +10379,6 @@
         "welt"
     ],
     "pens": [
-        "dens",
         "hens",
         "lens",
         "pans",
@@ -11690,7 +10467,6 @@
         "sews"
     ],
     "pick": [
-        "dick",
         "hick",
         "kick",
         "lick",
@@ -11723,7 +10499,6 @@
         "digs",
         "figs",
         "gigs",
-        "jigs",
         "pegs",
         "pies",
         "pins",
@@ -12050,7 +10825,6 @@
         "prop"
     ],
     "poor": [
-        "boor",
         "door",
         "pool",
         "poop",
@@ -12073,7 +10847,6 @@
     ],
     "pops": [
         "bops",
-        "cops",
         "hops",
         "lops",
         "mops",
@@ -12173,7 +10946,6 @@
     "pots": [
         "cots",
         "dots",
-        "jots",
         "lots",
         "pats",
         "pets",
@@ -12184,7 +10956,6 @@
         "rots"
     ],
     "pour": [
-        "dour",
         "four",
         "hour",
         "poor",
@@ -12210,7 +10981,6 @@
         "prom"
     ],
     "pray": [
-        "bray",
         "fray",
         "play",
         "pram",
@@ -12255,7 +11025,6 @@
     ],
     "pubs": [
         "cubs",
-        "dubs",
         "hubs",
         "puns",
         "pups",
@@ -12281,7 +11050,6 @@
         "buff",
         "cuff",
         "duff",
-        "guff",
         "huff",
         "muff",
         "ruff"
@@ -12519,9 +11287,7 @@
     ],
     "rags": [
         "bags",
-        "fags",
         "gags",
-        "hags",
         "lags",
         "nags",
         "rage",
@@ -12758,7 +11524,6 @@
     ],
     "rave": [
         "cave",
-        "eave",
         "gave",
         "have",
         "pave",
@@ -12776,10 +11541,7 @@
     "rays": [
         "bays",
         "days",
-        "gays",
-        "hays",
         "jays",
-        "lays",
         "nays",
         "pays",
         "rags",
@@ -12886,7 +11648,6 @@
     "reed": [
         "deed",
         "feed",
-        "geed",
         "heed",
         "need",
         "peed",
@@ -13050,7 +11811,6 @@
         "digs",
         "figs",
         "gigs",
-        "jigs",
         "pigs",
         "rags",
         "ribs",
@@ -13079,7 +11839,6 @@
     "rims": [
         "aims",
         "dims",
-        "hims",
         "rams",
         "ribs",
         "rids",
@@ -13219,7 +11978,6 @@
     "robs": [
         "bobs",
         "cobs",
-        "gobs",
         "jobs",
         "lobs",
         "mobs",
@@ -13232,7 +11990,6 @@
         "sobs"
     ],
     "rock": [
-        "cock",
         "dock",
         "hock",
         "jock",
@@ -13395,7 +12152,6 @@
     "rots": [
         "cots",
         "dots",
-        "jots",
         "lots",
         "pots",
         "rats",
@@ -13408,7 +12164,6 @@
     "rove": [
         "cove",
         "dove",
-        "hove",
         "love",
         "move",
         "rave",
@@ -13423,7 +12178,6 @@
     "rows": [
         "bows",
         "cows",
-        "hows",
         "lows",
         "mows",
         "robs",
@@ -13436,7 +12190,6 @@
     ],
     "rubs": [
         "cubs",
-        "dubs",
         "hubs",
         "pubs",
         "ribs",
@@ -13464,7 +12217,6 @@
         "buff",
         "cuff",
         "duff",
-        "guff",
         "huff",
         "muff",
         "puff"
@@ -13508,7 +12260,6 @@
     ],
     "rums": [
         "bums",
-        "cums",
         "gums",
         "hums",
         "rams",
@@ -13669,9 +12420,7 @@
     ],
     "sags": [
         "bags",
-        "fags",
         "gags",
-        "hags",
         "lags",
         "nags",
         "rags",
@@ -13866,7 +12615,6 @@
     ],
     "save": [
         "cave",
-        "eave",
         "gave",
         "have",
         "pave",
@@ -13880,7 +12628,6 @@
         "wave"
     ],
     "saws": [
-        "caws",
         "jaws",
         "laws",
         "paws",
@@ -13895,10 +12642,7 @@
     "says": [
         "bays",
         "days",
-        "gays",
-        "hays",
         "jays",
-        "lays",
         "nays",
         "pays",
         "rays",
@@ -14035,7 +12779,6 @@
     "seed": [
         "deed",
         "feed",
-        "geed",
         "heed",
         "need",
         "peed",
@@ -14107,7 +12850,6 @@
     "seer": [
         "beer",
         "deer",
-        "jeer",
         "leer",
         "peer",
         "sear",
@@ -14123,7 +12865,6 @@
     "sees": [
         "bees",
         "fees",
-        "gees",
         "pees",
         "seas",
         "seed",
@@ -14147,7 +12888,6 @@
         "cell",
         "fell",
         "hell",
-        "jell",
         "seal",
         "self",
         "sill",
@@ -14301,7 +13041,6 @@
         "shun"
     ],
     "sick": [
-        "dick",
         "hick",
         "kick",
         "lick",
@@ -14376,7 +13115,6 @@
     ],
     "silt": [
         "hilt",
-        "jilt",
         "kilt",
         "lilt",
         "salt",
@@ -14478,7 +13216,6 @@
     ],
     "sirs": [
         "airs",
-        "firs",
         "sins",
         "sips",
         "sire",
@@ -14580,7 +13317,6 @@
     ],
     "slab": [
         "blab",
-        "flab",
         "scab",
         "slag",
         "slam",
@@ -14893,7 +13629,6 @@
     "sobs": [
         "bobs",
         "cobs",
-        "gobs",
         "jobs",
         "lobs",
         "mobs",
@@ -14904,7 +13639,6 @@
         "sows"
     ],
     "sock": [
-        "cock",
         "dock",
         "hock",
         "jock",
@@ -14999,7 +13733,6 @@
     ],
     "sons": [
         "cons",
-        "dons",
         "ions",
         "sins",
         "sobs",
@@ -15011,7 +13744,6 @@
         "tons"
     ],
     "soon": [
-        "boon",
         "goon",
         "moon",
         "noon",
@@ -15035,7 +13767,6 @@
     ],
     "sops": [
         "bops",
-        "cops",
         "hops",
         "lops",
         "mops",
@@ -15086,7 +13817,6 @@
         "sour"
     ],
     "sour": [
-        "dour",
         "four",
         "hour",
         "pour",
@@ -15109,7 +13839,6 @@
     "sows": [
         "bows",
         "cows",
-        "hows",
         "lows",
         "mows",
         "rows",
@@ -15335,7 +14064,6 @@
     ],
     "sued": [
         "cued",
-        "hued",
         "seed",
         "shed",
         "sled",
@@ -15368,7 +14096,6 @@
     ],
     "sums": [
         "bums",
-        "cums",
         "gums",
         "hums",
         "rums",
@@ -15511,8 +14238,6 @@
     "sync": [],
     "tabs": [
         "cabs",
-        "dabs",
-        "gabs",
         "jabs",
         "labs",
         "nabs",
@@ -15552,9 +14277,7 @@
     ],
     "tags": [
         "bags",
-        "fags",
         "gags",
-        "hags",
         "lags",
         "nags",
         "rags",
@@ -15760,7 +14483,6 @@
     ],
     "task": [
         "bask",
-        "cask",
         "mask",
         "tack",
         "talk",
@@ -15847,7 +14569,6 @@
     "tees": [
         "bees",
         "fees",
-        "gees",
         "pees",
         "sees",
         "teas",
@@ -15862,7 +14583,6 @@
         "cell",
         "fell",
         "hell",
-        "jell",
         "sell",
         "tall",
         "till",
@@ -15884,7 +14604,6 @@
         "vend"
     ],
     "tens": [
-        "dens",
         "hens",
         "lens",
         "pens",
@@ -16000,7 +14719,6 @@
         "thug"
     ],
     "tick": [
-        "dick",
         "hick",
         "kick",
         "lick",
@@ -16085,7 +14803,6 @@
     ],
     "tilt": [
         "hilt",
-        "jilt",
         "kilt",
         "lilt",
         "silt",
@@ -16249,7 +14966,6 @@
     ],
     "tons": [
         "cons",
-        "dons",
         "ions",
         "sons",
         "tans",
@@ -16297,7 +15013,6 @@
     ],
     "tops": [
         "bops",
-        "cops",
         "hops",
         "lops",
         "mops",
@@ -16370,7 +15085,6 @@
         "vote"
     ],
     "tour": [
-        "dour",
         "four",
         "hour",
         "pour",
@@ -16397,7 +15111,6 @@
     "tows": [
         "bows",
         "cows",
-        "hows",
         "lows",
         "mows",
         "rows",
@@ -16427,7 +15140,6 @@
         "wrap"
     ],
     "tray": [
-        "bray",
         "fray",
         "pray",
         "trap"
@@ -16481,7 +15193,6 @@
     ],
     "tubs": [
         "cubs",
-        "dubs",
         "hubs",
         "pubs",
         "rubs",
@@ -16686,7 +15397,6 @@
     "veer": [
         "beer",
         "deer",
-        "jeer",
         "leer",
         "peer",
         "seer",
@@ -16765,7 +15475,6 @@
         "veal"
     ],
     "vibe": [
-        "jibe",
         "vice",
         "vile",
         "vine"
@@ -16822,7 +15531,6 @@
     "vows": [
         "bows",
         "cows",
-        "hows",
         "lows",
         "mows",
         "rows",
@@ -16877,9 +15585,7 @@
     ],
     "wags": [
         "bags",
-        "fags",
         "gags",
-        "hags",
         "lags",
         "nags",
         "rags",
@@ -17147,7 +15853,6 @@
     ],
     "wave": [
         "cave",
-        "eave",
         "gave",
         "have",
         "pave",
@@ -17175,10 +15880,7 @@
     "ways": [
         "bays",
         "days",
-        "gays",
-        "hays",
         "jays",
-        "lays",
         "nays",
         "pays",
         "rays",
@@ -17237,7 +15939,6 @@
     "weed": [
         "deed",
         "feed",
-        "geed",
         "heed",
         "need",
         "peed",
@@ -17276,7 +15977,6 @@
     "weer": [
         "beer",
         "deer",
-        "jeer",
         "leer",
         "peer",
         "seer",
@@ -17290,7 +15990,6 @@
     "wees": [
         "bees",
         "fees",
-        "gees",
         "pees",
         "sees",
         "tees",
@@ -17316,7 +16015,6 @@
         "cell",
         "fell",
         "hell",
-        "jell",
         "sell",
         "tell",
         "wall",
@@ -17417,7 +16115,6 @@
         "whim"
     ],
     "wick": [
-        "dick",
         "hick",
         "kick",
         "lick",
@@ -17456,7 +16153,6 @@
         "digs",
         "figs",
         "gigs",
-        "jigs",
         "pigs",
         "rigs",
         "wags",
@@ -17488,7 +16184,6 @@
     ],
     "wilt": [
         "hilt",
-        "jilt",
         "kilt",
         "lilt",
         "silt",
@@ -17813,7 +16508,6 @@
     "wove": [
         "cove",
         "dove",
-        "hove",
         "love",
         "move",
         "rove",
@@ -17825,7 +16519,6 @@
     "wows": [
         "bows",
         "cows",
-        "hows",
         "lows",
         "mows",
         "rows",
@@ -17920,7 +16613,6 @@
         "cell",
         "fell",
         "hell",
-        "jell",
         "sell",
         "tell",
         "well",
@@ -17945,7 +16637,6 @@
         "folk"
     ],
     "your": [
-        "dour",
         "four",
         "hour",
         "pour",
@@ -18040,8 +16731,6 @@
         "zoos"
     ],
     "zoos": [
-        "boos",
-        "coos",
         "zoom"
     ]
 }
