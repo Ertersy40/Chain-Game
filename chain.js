@@ -1,4 +1,7 @@
-// localStorage.setItem('guesses', '["carp"]')
+const MAX_GUESSES = 10;
+let gameOver = false; // Track if the game is over
+
+
 function loadWordData(filePath, callback) {
     fetch(filePath)
         .then(response => response.json())
@@ -123,6 +126,13 @@ function calculateMinMoves(words, startingWord, targetWord) {
 
 
 function initializeGame(wordData) {
+    
+    const helpShown = localStorage.getItem('HelpShown')
+    if (!helpShown) {
+        showHelpModal()
+        localStorage.setItem('HelpShown', 'true')
+    }
+
     const lastPlayed = localStorage.getItem('LastPlayed');
     const today = getTodayDateString();
     if (lastPlayed === today) {
@@ -136,6 +146,8 @@ function initializeGame(wordData) {
         // Check if the game was won
         if (guesses[guesses.length - 1] === targetWord) {
             endGame(wordData);
+        } else if (guesses.length >= MAX_GUESSES) {
+            endGame(wordData, won=false)
         } else {
             calculateMinMoves(wordData, startingWord, targetWord);
         }
@@ -176,6 +188,11 @@ function displayChain(wordData, guesses, targetWord) {
         const targetDivContainer = displayWord(wordData, targetWord, targetWord);
         chainDiv.appendChild(targetDivContainer);
     }
+
+    // Update guesses remaining display
+    const guessesUsedDiv = document.getElementById('guessesUsedDisplay');
+    const guessesUsed = guesses.length;
+    guessesUsedDiv.textContent = `${guessesUsed}/${MAX_GUESSES}`;
 
     // Add the slideDown class to the current word and the last word
     const currentWordDiv = chainDiv.querySelector('.word.current');
@@ -278,6 +295,7 @@ function selectLetter(letterDiv, wordDivContainer) {
 }
 
 document.getElementById('customKeyboard').addEventListener('click', function(event) {
+    if (gameOver) return;
     const clickedKey = event.target.textContent.trim();
 
     if (clickedKey.length === 1 && /[a-zA-Z]/.test(clickedKey)) {
@@ -288,6 +306,7 @@ document.getElementById('customKeyboard').addEventListener('click', function(eve
 
 
 function handleLetterChange(event) {
+    if (gameOver) return;
     // console.log("first")
     // console.log("LETTER CHANGEEE")
     const selectedLetter = document.querySelector('.letter.selected');
@@ -357,12 +376,11 @@ function handleLetterChange(event) {
 //     minMovesDiv.textContent = `Minimum possible moves: ${minMoves}`;
 // }
 
-function submitGuess(wordData, userGuess = null) {
-
     // console.log('clogclef')
     // calculateMinMoves(wordData, "clog", "clef")
     // console.log('clogclef')
 
+function submitGuess(wordData, userGuess = null) {
     userGuess = userGuess || document.getElementById('userGuess').value.trim().toLowerCase();
     const guesses = loadGuesses();
     const currentWord = guesses.length > 0 ? guesses[guesses.length - 1] : localStorage.getItem('startingWord');
@@ -375,10 +393,12 @@ function submitGuess(wordData, userGuess = null) {
         displayChain(wordData, guesses, targetWord); // Update the chain display
 
         if (userGuess === targetWord) {
-            endGame(wordData);
+            endGame(wordData, true); // Player wins
+        } else if (guesses.length >= MAX_GUESSES) {
+            endGame(wordData, false); // Player loses
         }
     } else {
-        // console.log(currentWord);
+        // Invalid guess handling (optional)
     }
 }
 
@@ -416,8 +436,12 @@ function getColorBasedOnMoves(moves) {
 }
 
 
-function endGame(wordData) {
-    burstConfetti(); 
+function endGame(wordData, won = true) {
+    gameOver = true; // Set the game over state
+
+    if (won) {
+        burstConfetti();
+    }
 
     // Deselect all letters
     document.querySelectorAll('.letter.selected').forEach(letter => letter.classList.remove('selected'));
@@ -435,21 +459,22 @@ function endGame(wordData) {
     const { depth: minMoves, path: idealPath } = calculateMinMoves(wordData, startingWord, targetWord);
     const playerScore = guesses.length - 1;
 
-    // Show the win modal and pass the ideal path
-    showWinModal(wordData, playerScore, minMoves, idealPath);
+    // Show the end game modal and pass the ideal path
+    showEndGameModal(wordData, playerScore, minMoves, idealPath, won);
 
     addFinishClass('customKeyboard');
     addFinishClass('chainDisplay');
 
     // Add "Share your results" button
-    addShareResultsButton();
+    addShareResultsButton(won);
 }
 
 function addFinishClass(name) {
     document.getElementById(name).classList.add('finished')
 }
 
-function showWinModal(wordData, playerScore, minMoves, idealPath) {
+
+function showEndGameModal(wordData, playerScore, minMoves, idealPath, won) {
     const modal = document.getElementById('winModal');
     const scoreMessage = document.getElementById('scoreMessage');
     const shareButton = document.getElementById('shareButton');
@@ -459,11 +484,17 @@ function showWinModal(wordData, playerScore, minMoves, idealPath) {
     // Clear previous ideal path display
     idealPathContainer.innerHTML = '';
 
-    // Display score
-    scoreMessage.textContent = `Final score: ${playerScore} out of ${minMoves}.`;
+    // Display message
+    if (won) {
+        modal.querySelector('h2').textContent = 'Congratulations!';
+        scoreMessage.textContent = `Final score: ${playerScore} out of ${minMoves}.`;
+    } else {
+        modal.querySelector('h2').textContent = 'Game Over!';
+        scoreMessage.textContent = `You used all ${MAX_GUESSES} guesses.`;
+    }
 
-    // Display the ideal path one by one in a column
-    idealPath.forEach((word, index) => {
+    // Display the ideal path
+    idealPath.forEach((word) => {
         const wordDiv = document.createElement('div');
         wordDiv.className = 'idealWord';
         wordDiv.textContent = word;
@@ -479,10 +510,15 @@ function showWinModal(wordData, playerScore, minMoves, idealPath) {
 
     // Share button functionality
     shareButton.onclick = function() {
-        const shareText = `I completed WordChains in ${playerScore}/${minMoves}!\nWordChains.xyz`;
+        let shareText;
+        if (won) {
+            shareText = `I completed WordChains in ${playerScore}/${minMoves} moves!\nWordChains.xyz`;
+        } else {
+            shareText = `I failed to complete WordChains in ${playerScore}/${minMoves} moves.\nWordChains.xyz`;
+        }
         if (navigator.share) {
             navigator.share({
-                title: 'Word Game',
+                title: 'WordChains',
                 text: shareText,
                 url: window.location.href
             }).then(() => {
