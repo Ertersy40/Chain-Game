@@ -191,7 +191,7 @@ function displayChain(wordData, guesses, targetWord) {
 
     // Update guesses remaining display
     const guessesUsedDiv = document.getElementById('guessesUsedDisplay');
-    const guessesUsed = guesses.length;
+    const guessesUsed = guesses.length - 1;
     guessesUsedDiv.textContent = `${guessesUsed}/${MAX_GUESSES}`;
 
     // Add the slideDown class to the current word and the last word
