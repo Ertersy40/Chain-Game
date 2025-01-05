@@ -489,10 +489,10 @@ function getColorBasedOnMoves(moves) {
 function endGame(wordData, won = true) {
     gameOver = true; // Set the game over state
 
+    const level = localStorage.getItem('level');
+    const guesses = loadGuesses();
+    updateLevelScores(level, guesses); // Save guesses for the completed level
     if (won) {
-        const level = localStorage.getItem('level');
-        const guesses = loadGuesses();
-        updateLevelScores(level, guesses); // Save guesses for the completed level
         burstConfetti();
     }
 
@@ -504,7 +504,6 @@ function endGame(wordData, won = true) {
         letter.replaceWith(letter.cloneNode(true)); // Cloning removes all event listeners
     });
 
-    const guesses = loadGuesses();
     const startingWord = guesses[0];
     const targetWord = localStorage.getItem('targetWord');
 
