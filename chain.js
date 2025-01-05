@@ -612,7 +612,6 @@ function showEndGameModal(wordData, playerScore, minMoves, idealPath, won) {
     
         // Load scores
         const scores = JSON.parse(localStorage.getItem('levelScores')) || {};
-        const numberEmojis = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟']; // Number emojis
         const gradientEmojis = [
             '✅', '🟩', '🟨', '🟧', '🟥', '🟦', '🟪', '⬛', '😬'
         ]; // Gradient emojis for progress
@@ -629,7 +628,7 @@ function showEndGameModal(wordData, playerScore, minMoves, idealPath, won) {
                 return gradientEmojis[emojiIndex];
             }).join(' '); // Separate emojis with spaces
     
-            return `${numberEmojis[index]} ${emojiScore}`; // Combine level number and emojis
+            return `${emojiScore}`; // Combine level number and emojis
         }).join('\n'); // New line for each level
     
         // Final share text
@@ -637,7 +636,7 @@ function showEndGameModal(wordData, playerScore, minMoves, idealPath, won) {
         if (won) {
             shareText = `🎉 #WordChains${dayNumber}\n\n${scoreDetails}\n\NWordChains.xyz`;
         } else {
-            shareText = `😢 #WordChains${dayNumber}\n\n${scoreDetails}\n\NWordChains.xyz`;
+            shareText = `😢 #WordChains${dayNumber}\n\n${scoreDetails}\n\nWordChains.xyz`;
         }
     
         // Share logic
