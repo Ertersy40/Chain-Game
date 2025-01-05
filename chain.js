@@ -648,7 +648,6 @@ function showEndGameModal(wordData, playerScore, minMoves, idealPath, won) {
             navigator.share({
                 title: `WordChains - Day ${dayNumber}`,
                 text: shareText,
-                url: window.location.href
             }).then(() => {
                 console.log('Thanks for sharing!');
             }).catch(console.error);
