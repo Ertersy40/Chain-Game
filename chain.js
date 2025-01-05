@@ -155,7 +155,7 @@ function initializeGame(wordData) {
             } else {
                 nextLevel(wordData); // Move to next level
             }
-        } else if (guesses.length >= MAX_GUESSES[level]) {
+        } else if (guesses.length >= MAX_GUESSES[level] + 1) {
             // Player ran out of guesses, show loss screen
             endGame(wordData, false);
         } else {
