@@ -638,9 +638,9 @@ function showEndGameModal(wordData, playerScore, minMoves, idealPath, won) {
         // Final share text
         let shareText;
         if (won) {
-            shareText = `🎉 WordChains - Day ${dayNumber} 🏆\n\n${scoreDetails}\nWordChains.xyz`;
+            shareText = `🎉 #WordChains${dayNumber}\n\n${scoreDetails}\n\NWordChains.xyz`;
         } else {
-            shareText = `😢 WordChains - Day ${dayNumber} 💔\n\n${scoreDetails}\nWordChains.xyz`;
+            shareText = `😢 #WordChains${dayNumber}\n\n${scoreDetails}\n\NWordChains.xyz`;
         }
     
         // Share logic
