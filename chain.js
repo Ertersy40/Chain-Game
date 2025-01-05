@@ -533,15 +533,12 @@ function displayLevelScores(wordData) {
     ];
 
     // Define number emojis for levels
-    const numberEmojis = [
-        '1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'
-    ];
 
     // Iterate through each level's scores
     Object.keys(scores).forEach((level, index) => {
         const guesses = scores[level]; // Get guessed words for this level
         const targetWord = guesses[guesses.length - 1]; // Retrieve target word
-        let scoreText = `${numberEmojis[index]} `; // Use number emoji for the level
+        let scoreText = ''; // Use number emoji for the level
 
         // Generate gradient emojis based on moves
         scoreText += guesses.map(guess => {
