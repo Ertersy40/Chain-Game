@@ -529,23 +529,37 @@ function displayLevelScores(wordData) {
 
     // Define gradient emojis (from red to green)
     const gradientEmojis = [
-        '✅', '🟩', '🟨', '🟧', '🟥', '🟦', '🟪', '⬛', '😬'
+        '🟩', '🟨', '🟧', '🟥', '🟦', '🟪', '⬛', '😬'
     ];
-
-    // Define number emojis for levels
 
     // Iterate through each level's scores
     Object.keys(scores).forEach((level, index) => {
         const guesses = scores[level]; // Get guessed words for this level
-        const targetWord = guesses[guesses.length - 1]; // Retrieve target word
-        let scoreText = ''; // Use number emoji for the level
+        const startingWord = guesses[0]; // First word in the guesses
+        const targetWord = guesses[guesses.length - 1]; // Target word
+        const minMoves = calculateMinMoves(wordData, startingWord, targetWord).depth; // Min moves required
 
         // Generate gradient emojis based on moves
-        scoreText += guesses.map(guess => {
-            const moves = calculateMinMoves(wordData, guess, targetWord).depth; // Calculate moves to target
-            const emojiIndex = Math.min(moves, gradientEmojis.length - 1); // Clamp index to max length
-            return gradientEmojis[emojiIndex]; // Display only the emoji
+        let scoreText = guesses.map(guess => {
+            const moves = calculateMinMoves(wordData, guess, targetWord).depth; // Moves from guess to target
+            const emojiIndex = Math.min(moves, gradientEmojis.length - 1); // Clamp index
+            return gradientEmojis[emojiIndex]; // Select emoji based on distance
         }).join(' '); // Separate emojis with spaces
+
+        // Determine final emoji for row
+        const actualMoves = guesses.length - 1; // Actual moves taken
+        let endEmoji;
+
+        if (actualMoves === minMoves) {
+            endEmoji = '⭐'; // Perfect match
+        } else if (actualMoves < MAX_GUESSES[level]) {
+            endEmoji = '✅'; // Completed with extra moves
+        } else {
+            endEmoji = '❌'; // Failed (too many moves)
+        }
+
+        // Append final emoji
+        scoreText += ` ${endEmoji}`;
 
         // Add the formatted score to the display
         const levelText = document.createElement('p');
@@ -553,6 +567,7 @@ function displayLevelScores(wordData) {
         scoresDiv.appendChild(levelText);
     });
 }
+
 
 
 
@@ -606,35 +621,49 @@ function showEndGameModal(wordData, playerScore, minMoves, idealPath, won) {
     // Share button functionality
     shareButton.onclick = function () {
         // Calculate the day number based on November 20th
-        const startDate = new Date(2024, 10, 22); // November 20, 2023 (month is zero-indexed)
+        const startDate = new Date(2024, 10, 22); // November 20, 2024 (zero-indexed for month)
         const today = new Date();
         const dayNumber = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)) + 1; // Add 1 to make it Day 1
     
         // Load scores
         const scores = JSON.parse(localStorage.getItem('levelScores')) || {};
         const gradientEmojis = [
-            '✅', '🟩', '🟨', '🟧', '🟥', '🟦', '🟪', '⬛', '😬'
+            '🟩', '🟨', '🟧', '🟥', '🟦', '🟪', '⬛', '😬'
         ]; // Gradient emojis for progress
     
         // Generate score text with emojis
         let scoreDetails = Object.keys(scores).map((level, index) => {
-            const guesses = scores[level];
-            const targetWord = guesses[guesses.length - 1];
+            const guesses = scores[level]; // Words guessed in this level
+            const startingWord = guesses[0]; // First word
+            const targetWord = guesses[guesses.length - 1]; // Final word
+            const minMoves = calculateMinMoves(wordData, startingWord, targetWord).depth; // Min moves needed
     
             // Map guesses to gradient emojis
             const emojiScore = guesses.map(guess => {
                 const moves = calculateMinMoves(wordData, guess, targetWord).depth;
                 const emojiIndex = Math.min(moves, gradientEmojis.length - 1);
-                return gradientEmojis[emojiIndex];
+                return gradientEmojis[emojiIndex]; // Display emoji based on moves
             }).join(' '); // Separate emojis with spaces
     
-            return `${emojiScore}`; // Combine level number and emojis
+            // Award star, tick, or cross based on performance
+            const actualMoves = guesses.length - 1; // Actual moves taken
+            let endEmoji;
+    
+            if (actualMoves === minMoves) {
+                endEmoji = '⭐'; // Perfect match
+            } else if (actualMoves < MAX_GUESSES[level]) {
+                endEmoji = '✅'; // Completed but not perfect
+            } else {
+                endEmoji = '❌'; // Failed (ran out of guesses)
+            }
+    
+            return `${emojiScore} ${endEmoji}`; // Append result emoji at the end
         }).join('\n'); // New line for each level
     
         // Final share text
         let shareText;
         if (won) {
-            shareText = `🎉 #WordChains${dayNumber}\n\n${scoreDetails}\n\NWordChains.xyz`;
+            shareText = `🎉 #WordChains${dayNumber}\n\n${scoreDetails}\n\nWordChains.xyz`;
         } else {
             shareText = `😢 #WordChains${dayNumber}\n\n${scoreDetails}\n\nWordChains.xyz`;
         }
@@ -651,6 +680,7 @@ function showEndGameModal(wordData, playerScore, minMoves, idealPath, won) {
             alert('Sharing is not supported in this browser. Copy the link manually!');
         }
     };
+    
     
     
 
