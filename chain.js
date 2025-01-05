@@ -444,7 +444,7 @@ function submitGuess(wordData, userGuess = null) {
             } else {
                 nextLevel(wordData)
             }
-        } else if (guesses.length >= MAX_GUESSES[level]) {
+        } else if (guesses.length >= MAX_GUESSES[level] + 1) {
             endGame(wordData, false); // Player loses
         }
     } else {
