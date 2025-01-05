@@ -920,6 +920,7 @@ mane
 mans
 many
 maps
+mare
 mark
 mars
 mart
