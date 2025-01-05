@@ -1,4 +1,4 @@
-const MAX_GUESSES = 10;
+const MAX_GUESSES = {"1": 6, "2": 7, "3": 8, "4": 9, "5": 10};
 let gameOver = false; // Track if the game is over
 
 
@@ -71,10 +71,10 @@ function findPath(words, startingWord, maxLength = 20) {
     return path; // Return the path found
 }
 
-function findAndDisplayPath(wordData) {
+function findAndDisplayPath(wordData, minGuesses=5) {
     // Generate a seed based on today's date
     const today = new Date();
-    const baseSeed = `${today.getFullYear()}${today.getMonth() + 1}${today.getDate()}`;
+    const baseSeed = `${today.getFullYear()}${today.getMonth() + 1}${today.getDate()}${minGuesses}`;
 
     let startingWord, path, minMoves, seedIncrement = 0;
 
@@ -89,7 +89,7 @@ function findAndDisplayPath(wordData) {
         }
 
         seedIncrement++; // Increment to try a different seed in case of failure
-    } while (!path || minMoves < 5 || minMoves >= 6); // Ensure that only words with more than 5 minimum moves apart are chosen
+    } while (!path || minMoves < minGuesses || minMoves >= minGuesses + 1); // Ensure that only words with more than 5 minimum moves apart are chosen
 
     const targetWord = path[path.length - 1];
 
@@ -109,7 +109,7 @@ function calculateMinMoves(words, startingWord, targetWord) {
         let [currentWord, depth, path] = queue.shift();
 
         if (currentWord === startingWord) {
-            console.log(path.reverse())
+            // console.log(path.reverse())
             return { depth, path: path }; // Return the minimum depth and ideal path
         }
 
@@ -126,37 +126,81 @@ function calculateMinMoves(words, startingWord, targetWord) {
 
 
 function initializeGame(wordData) {
-    
-    const helpShown = localStorage.getItem('HelpShown')
+    const helpShown = localStorage.getItem('HelpShown');
     if (!helpShown) {
-        showHelpModal()
-        localStorage.setItem('HelpShown', 'true')
+        showHelpModal();
+        localStorage.setItem('HelpShown', 'true');
     }
 
     const lastPlayed = localStorage.getItem('LastPlayed');
+    const startingWord = localStorage.getItem('startingWord');
+    const targetWord = localStorage.getItem('targetWord');
+    let level = parseInt(localStorage.getItem('level')) || 1; // Ensure level is a number
+    const guesses = JSON.parse(localStorage.getItem('guesses')) || [startingWord];
+
     const today = getTodayDateString();
-    if (lastPlayed === today) {
-        // If the game was already played today, load from localStorage
-        const startingWord = localStorage.getItem('startingWord');
-        const targetWord = localStorage.getItem('targetWord');
-        const guesses = JSON.parse(localStorage.getItem('guesses')) || [startingWord];
-        
-        displayChain(wordData, guesses, targetWord); // Display the chain
-        
-        // Check if the game was won
+    const maxLevel = Object.keys(MAX_GUESSES).length; // Total number of levels
+
+    if (lastPlayed === today && startingWord && targetWord) {
+        setLevel(level);
+
+        // Display the chain based on saved progress
+        displayChain(wordData, guesses, targetWord);
+
+        // Check for win or loss conditions
         if (guesses[guesses.length - 1] === targetWord) {
-            endGame(wordData);
-        } else if (guesses.length >= MAX_GUESSES) {
-            endGame(wordData, won=false)
+            if (level === maxLevel) {
+                // Player finished all levels, show end screen
+                endGame(wordData, true);
+            } else {
+                nextLevel(wordData); // Move to next level
+            }
+        } else if (guesses.length >= MAX_GUESSES[level]) {
+            // Player ran out of guesses, show loss screen
+            endGame(wordData, false);
         } else {
+            // Continue game with the same path
             calculateMinMoves(wordData, startingWord, targetWord);
         }
     } else {
-        // If the game hasn't been played today, run findAndDisplayPath
-        findAndDisplayPath(wordData);
-        
+        // Reset to level 1 and start a new game if it's a new day
+        if (level > maxLevel) {
+            // Player has already finished all levels, show end screen
+            endGame(wordData, true);
+        } else {
+            // Start the first level or resume based on today's date
+            setLevel(1);
+            findAndDisplayPath(wordData, 3);
+        }
     }
 }
+
+
+function setLevel(level) {
+    document.getElementById("levelNumDisplay").innerHTML = `level ${level}: `
+    localStorage.setItem('level', level)
+}
+
+function nextLevel(wordData) {
+    const level = localStorage.getItem('level');
+    const guesses = loadGuesses();
+    updateLevelScores(level, guesses); // Save the guesses for the completed level
+
+    burstConfetti();
+    if (!level) {
+        localStorage.setItem('level', 1);
+    }
+    setLevel(parseInt(level) + 1);
+
+    findAndDisplayPath(wordData, parseInt(MAX_GUESSES[parseInt(level) + 1]) - 3);
+}
+
+function updateLevelScores(level, guesses) {
+    const scores = JSON.parse(localStorage.getItem('levelScores')) || {};
+    scores[level] = guesses;
+    localStorage.setItem('levelScores', JSON.stringify(scores));
+}
+
 
 
 function saveGuesses(path) {
@@ -171,6 +215,7 @@ function loadGuesses() {
 function displayChain(wordData, guesses, targetWord) {
     const chainDiv = document.getElementById('chainDisplay');
     chainDiv.innerHTML = ''; // Clear previous content
+    const level = localStorage.getItem('level')
 
     // Display each word in the guesses list
     guesses.slice(0, guesses.length - 1).forEach((guess, guessIndex) => {
@@ -192,7 +237,7 @@ function displayChain(wordData, guesses, targetWord) {
     // Update guesses remaining display
     const guessesUsedDiv = document.getElementById('guessesUsedDisplay');
     const guessesUsed = guesses.length - 1;
-    guessesUsedDiv.textContent = `${guessesUsed}/${MAX_GUESSES}`;
+    guessesUsedDiv.textContent = `${guessesUsed}/${MAX_GUESSES[level]}`;
 
     // Add the slideDown class to the current word and the last word
     const currentWordDiv = chainDiv.querySelector('.word.current');
@@ -385,6 +430,7 @@ function submitGuess(wordData, userGuess = null) {
     const guesses = loadGuesses();
     const currentWord = guesses.length > 0 ? guesses[guesses.length - 1] : localStorage.getItem('startingWord');
     const targetWord = localStorage.getItem('targetWord');
+    const level = localStorage.getItem('level');
 
     if (userGuess && wordData[userGuess] && isOneLetterDifferent(currentWord, userGuess)) {
         guesses.push(userGuess);
@@ -393,8 +439,12 @@ function submitGuess(wordData, userGuess = null) {
         displayChain(wordData, guesses, targetWord); // Update the chain display
 
         if (userGuess === targetWord) {
-            endGame(wordData, true); // Player wins
-        } else if (guesses.length >= MAX_GUESSES) {
+            if (level == Object.keys(MAX_GUESSES)[Object.keys(MAX_GUESSES).length - 1]) {
+                endGame(wordData, true); // Player wins
+            } else {
+                nextLevel(wordData)
+            }
+        } else if (guesses.length >= MAX_GUESSES[level]) {
             endGame(wordData, false); // Player loses
         }
     } else {
@@ -440,6 +490,9 @@ function endGame(wordData, won = true) {
     gameOver = true; // Set the game over state
 
     if (won) {
+        const level = localStorage.getItem('level');
+        const guesses = loadGuesses();
+        updateLevelScores(level, guesses); // Save guesses for the completed level
         burstConfetti();
     }
 
@@ -469,9 +522,51 @@ function endGame(wordData, won = true) {
     addShareResultsButton(won);
 }
 
+function displayLevelScores(wordData) {
+    const scores = JSON.parse(localStorage.getItem('levelScores')) || {};
+    const scoresDiv = document.getElementById('levelScoreParas');
+    scoresDiv.innerHTML = ''; // Reset display
+
+    // Define gradient emojis (from red to green)
+    const gradientEmojis = [
+        '✅', '🟩', '🟨', '🟧', '🟥', '🟦', '🟪', '⬛', '😬'
+    ];
+
+    // Define number emojis for levels
+    const numberEmojis = [
+        '1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'
+    ];
+
+    // Iterate through each level's scores
+    Object.keys(scores).forEach((level, index) => {
+        const guesses = scores[level]; // Get guessed words for this level
+        const targetWord = guesses[guesses.length - 1]; // Retrieve target word
+        let scoreText = `${numberEmojis[index]} `; // Use number emoji for the level
+
+        // Generate gradient emojis based on moves
+        scoreText += guesses.map(guess => {
+            const moves = calculateMinMoves(wordData, guess, targetWord).depth; // Calculate moves to target
+            const emojiIndex = Math.min(moves, gradientEmojis.length - 1); // Clamp index to max length
+            return gradientEmojis[emojiIndex]; // Display only the emoji
+        }).join(' '); // Separate emojis with spaces
+
+        // Add the formatted score to the display
+        const levelText = document.createElement('p');
+        levelText.textContent = scoreText; // Use the emoji-based score text
+        scoresDiv.appendChild(levelText);
+    });
+}
+
+
+
+
+
+
 function addFinishClass(name) {
     document.getElementById(name).classList.add('finished')
 }
+
+// This is my wordle game. Right now when you get one word right it just ends and says you won. I want there to be levels where if you get it right, you go to the next level which is more steps away from the target word. If you finish the final level you get the win screen 
 
 
 function showEndGameModal(wordData, playerScore, minMoves, idealPath, won) {
@@ -480,9 +575,12 @@ function showEndGameModal(wordData, playerScore, minMoves, idealPath, won) {
     const shareButton = document.getElementById('shareButton');
     const closeModalButton = document.getElementById('closeModalButton');
     const idealPathContainer = document.getElementById('idealPathContainer');
+    const level = localStorage.getItem('level')
+
+    displayLevelScores(wordData);
 
     // Clear previous ideal path display
-    idealPathContainer.innerHTML = '';
+    // idealPathContainer.innerHTML = '';
 
     // Display message
     if (won) {
@@ -490,35 +588,65 @@ function showEndGameModal(wordData, playerScore, minMoves, idealPath, won) {
         scoreMessage.textContent = `Final score: ${playerScore} out of ${minMoves}.`;
     } else {
         modal.querySelector('h2').textContent = 'Game Over!';
-        scoreMessage.textContent = `You used all ${MAX_GUESSES} guesses.`;
+        scoreMessage.textContent = `You used all ${MAX_GUESSES[level]} guesses.`;
     }
 
     // Display the ideal path
-    idealPath.forEach((word) => {
-        const wordDiv = document.createElement('div');
-        wordDiv.className = 'idealWord';
-        wordDiv.textContent = word;
+    // idealPath.forEach((word) => {
+    //     const wordDiv = document.createElement('div');
+    //     wordDiv.className = 'idealWord';
+    //     wordDiv.textContent = word;
 
-        // Calculate the color based on the number of moves from this word to the target
-        const movesToTarget = calculateMinMoves(wordData, word, idealPath[idealPath.length - 1]).depth;
-        const colors = getColorBasedOnMoves(movesToTarget);
-        wordDiv.style.backgroundColor = colors.color;
+    //     // Calculate the color based on the number of moves from this word to the target
+    //     const movesToTarget = calculateMinMoves(wordData, word, idealPath[idealPath.length - 1]).depth;
+    //     const colors = getColorBasedOnMoves(movesToTarget);
+    //     wordDiv.style.backgroundColor = colors.color;
 
-        // Append the word div to the container
-        idealPathContainer.appendChild(wordDiv);
-    });
+    //     // Append the word div to the container
+    //     // idealPathContainer.appendChild(wordDiv);
+    // });
 
     // Share button functionality
-    shareButton.onclick = function() {
+    shareButton.onclick = function () {
+        // Calculate the day number based on November 20th
+        const startDate = new Date(2023, 10, 20); // November 20, 2023 (month is zero-indexed)
+        const today = new Date();
+        const dayNumber = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)) + 1; // Add 1 to make it Day 1
+    
+        // Load scores
+        const scores = JSON.parse(localStorage.getItem('levelScores')) || {};
+        const numberEmojis = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟']; // Number emojis
+        const gradientEmojis = [
+            '✅', '🟩', '🟨', '🟧', '🟥', '🟦', '🟪', '⬛', '😬'
+        ]; // Gradient emojis for progress
+    
+        // Generate score text with emojis
+        let scoreDetails = Object.keys(scores).map((level, index) => {
+            const guesses = scores[level];
+            const targetWord = guesses[guesses.length - 1];
+    
+            // Map guesses to gradient emojis
+            const emojiScore = guesses.map(guess => {
+                const moves = calculateMinMoves(wordData, guess, targetWord).depth;
+                const emojiIndex = Math.min(moves, gradientEmojis.length - 1);
+                return gradientEmojis[emojiIndex];
+            }).join(' '); // Separate emojis with spaces
+    
+            return `${numberEmojis[index]} ${emojiScore}`; // Combine level number and emojis
+        }).join('\n'); // New line for each level
+    
+        // Final share text
         let shareText;
         if (won) {
-            shareText = `I completed WordChains in ${playerScore}/${minMoves} moves!\nWordChains.xyz`;
+            shareText = `🎉 WordChains - Day ${dayNumber} 🏆\n\n${scoreDetails}\nWordChains.xyz`;
         } else {
-            shareText = `I failed to complete WordChains in ${playerScore}/${minMoves} moves.\nWordChains.xyz`;
+            shareText = `😢 WordChains - Day ${dayNumber} 💔\n\n${scoreDetails}\nWordChains.xyz`;
         }
+    
+        // Share logic
         if (navigator.share) {
             navigator.share({
-                title: 'WordChains',
+                title: `WordChains - Day ${dayNumber}`,
                 text: shareText,
                 url: window.location.href
             }).then(() => {
@@ -528,6 +656,8 @@ function showEndGameModal(wordData, playerScore, minMoves, idealPath, won) {
             alert('Sharing is not supported in this browser. Copy the link manually!');
         }
     };
+    
+    
 
     // Close button functionality
     closeModalButton.onclick = function() {
@@ -582,4 +712,3 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener('keydown', handleLetterChange);
     loadWordData('word_differences.json', initializeGame);
 });
-
