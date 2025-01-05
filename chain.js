@@ -609,7 +609,7 @@ function showEndGameModal(wordData, playerScore, minMoves, idealPath, won) {
     // Share button functionality
     shareButton.onclick = function () {
         // Calculate the day number based on November 20th
-        const startDate = new Date(2023, 10, 20); // November 20, 2023 (month is zero-indexed)
+        const startDate = new Date(2024, 10, 22); // November 20, 2023 (month is zero-indexed)
         const today = new Date();
         const dayNumber = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)) + 1; // Add 1 to make it Day 1
     
